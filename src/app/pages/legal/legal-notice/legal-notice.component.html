@@ -1,0 +1,106 @@
+<!-- Header -->
+<app-header
+    [shrink]="true"
+    (home)="headerNavigation('/', 'home')"
+    (features)="headerNavigation('/', 'features')"
+    (pricing)="headerNavigation('/', 'pricing')"
+    (about)="headerNavigation('/', 'about')"
+    (contact)="headerNavigation('/', 'contact')">
+</app-header>
+
+<div class="legal-section">
+    <div class="section-container">
+
+        <!-- Legal notice section -->
+        <div id="legalNoticeContainer">
+
+            <h1 class="section-p1">Legal notice</h1>
+
+            <!-- Identification information -->
+            <p class="section-p2">Identification information</p>
+
+            <p>
+                In compliance with the duty of information contained in article 10 of Law 34/2002, of July 11, on Services of the Information Society and Electronic Commerce, the following data of the owner of this website are reflected below: 
+            </p>
+
+            <ul>
+                <li>OPEN DATA SECURITY S.L. (hereinafter, ODS)</li>
+                <li>CIF B-76.741.222</li>
+                <li>Registered Office: C/ Santiago, number 56, C.P. 38001, Santa Cruz de Tenerife.</li>
+                <li>Registered in the Mercantile Register of Santa Cruz de Tenerife, Volume 3.513, Folio 171, Sheet TF 59.401.</li>
+                <li>Contact e-mail: <a href="mailto:info@opendatasecurity.io">info@opendatasecurity.io</a></li>
+                <li>
+                    Contact telephone numbers:
+                    <ul>
+                        <li>ES: +34 900 838 167</li>
+                        <li>UK: +44 203 034 0056</li>
+                        <li>US: +1 347 669 9174</li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!-- Terms and conditions of use -->
+            <p class="section-p2">Terms and conditions of use</p>
+
+            <p>
+                The access and / or use of this website owned by ODS attributes the condition of USER that accepts from this access and / or use the present General Conditions of Use that regulate the access and the use of this website. The user undertakes not to use the information published on this website for illegal or harmful purposes contrary to those defined in this Legal Notice.
+            </p>
+
+            <p>
+                ODS cannot guarantee the inexistence of interruptions or errors in access to this website, despite having taken all necessary technological measures to avoid it.
+            </p>
+
+
+            <!-- Intellectual and industrial property -->
+            <p class="section-p2">Intellectual and industrial property</p>
+
+            <p>
+                All intellectual property rights of all elements contained in this website, including trademarks, formats, graphic designs and images that make up the template of this website, belong to the developers of the same.
+            </p>
+
+            <p>
+                Likewise, the images, documents, texts, as well as other files that the holder of this web can include to configure this page to the activity that plays belong to ODS.
+            </p>
+
+            <p>
+                In both cases, they are protected by Spanish and international laws on Intellectual and Industrial Property. It is expressly forbidden the total or partial reproduction of this website and any of its contents without the express written permission of the owners mentioned above. Access to the website does not imply any waiver, transmission, license or assignment of said rights by the same, unless expressly stated otherwise. The USER undertakes to respect the rights of Intellectual Property and Industrial ownership of ODS.
+            </p>
+
+
+            <!-- Links to other websites -->
+            <p class="section-p2">Links to other websites</p>
+
+            <p>
+                In the event that links or hyperlinks to other Internet sites are provided on this website, ODS, will not exercise any control over said sites and contents. In no case will ODS, assume any responsibility for the contents of any link belonging to a third-party website, nor guarantee the technical availability, quality, reliability, accuracy, breadth, truthfulness and validity of any material or information contained in any of such hyperlinks or other Internet sites. If you access these web pages you should be aware that they are not covered by this <a [routerLink]="['/legal-notice']">Legal Notice</a> and by our <a [routerLink]="['/privacy-policy']">Privacy Policy</a>.
+            </p>
+
+            <!-- Modification of the present conditions and duration -->
+            <p class="section-p2">Modification of the present conditions and duration</p>
+
+            <p>
+                ODS, Reserves the right to make any modifications that it deems appropriate in its portal without prior notice, being able to change, suppress or add both the contents and services provided through it and the way in which they appear presented or located in its Web, in accordance with current legislation and guidelines of the Official Bodies in this area.
+            </p>
+
+            <p>
+                These Terms of Use shall remain in force until they are modified by others and duly published.
+            </p>
+
+
+            <!-- Legislation and jurisdiction -->
+            <p class="section-p2">Legislation and jurisdiction</p>
+
+            <p>
+                The legislation applicable to the content of the website will be the Spanish and the jurisdiction, corresponding to the competent Courts and Tribunals in Santa Cruz de Tenerife.
+            </p>
+
+            <div class="last-modified">
+                <span class="small-text">Last modified: {{ modified_date | date:'fullDate' }}</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

@@ -1,0 +1,92 @@
+@import '../../pages/home/home-page.component.scss';
+
+/* ------------------------------------------------- */
+/*              Pricing section styles               */
+/* ------------------------------------------------- */
+
+.pricing-section {
+    color: $dark-primary;
+    
+    .card {
+        position: relative;
+        padding: 1.75rem 0;
+        text-align: center;
+        border-radius: 0;
+        transition: all 0.3s ease-in-out;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background-color: $brand-alternative;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        .card-header {
+            width: 100%;
+            background-color: #ffffff;
+            padding-bottom: 0;
+            border-bottom: 0;
+
+            .card-price {
+                margin-bottom: 0.6rem;
+                font-size: 1.8rem;
+                letter-spacing: 0;
+            }
+        }
+
+        .card-block {
+            width: 100%;
+            padding: 20px 0;
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        .divider {
+            margin: 0 20px;
+            border: solid 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .list-group-item {
+            border: 0;
+            padding: 0.25rem;
+        }
+
+        .action {
+            margin-top: 15px;
+        }
+    }
+
+    @include mq('medium-screen') {
+        .card {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            padding-bottom: 10px;
+            
+            .card-block {
+                margin: 0;
+                width: 40%;
+            }
+
+            .divider {
+                margin: 20px 0;
+                border: solid 1px rgba(0, 0, 0, 0.08);
+            }
+        }
+    }
+}

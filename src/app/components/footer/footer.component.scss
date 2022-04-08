@@ -1,0 +1,357 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*               Footer public styles                */
+/* ------------------------------------------------- */
+
+footer {
+    font-family: $font-primary;
+    padding: 20px 10px;
+    color: $light-primary;
+    background-color: $dark-primary;
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .brand {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+
+            .brand-logo {
+                align-self: center;
+                width: 40px;
+            }
+    
+            .brand-text {
+                align-self: center;
+                margin-left: 10px;
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+
+        .navigation {
+            width: 100%;
+            align-self: center;
+
+            .navigation-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+
+                .list-item {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0;
+
+                    .list-item-link {
+                        padding: 10px;
+                        color: $light-primary;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 0.9rem;
+                        transition: all 0.2s ease-in-out;
+
+                        border: solid transparent 1px;
+
+                        &:hover {
+                            color: $brand-alternative;
+                            border: solid $brand-alternative 1px
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+
+        .property {
+            display: none;
+        }
+
+        .powered {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin-top: 25px;
+
+            .powered-text {
+                align-self: center;
+                font-size: 0.9rem;
+            }
+
+            .powered-logo {
+                align-self: center;
+                margin: 0 5px;
+
+                img {
+                    width: 100px;
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
+
+@include mq('large-screen') {
+
+    footer {
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+    
+            .brand {
+                width: 40%;
+                justify-content: flex-start;
+    
+                .brand-logo {
+                    width: 60px;
+                }
+        
+                .brand-text {
+                    align-self: center;
+                    font-size: 2rem;
+                }
+            }
+    
+            .navigation {
+                width: 60%;
+                align-self: center;
+                
+                .navigation-list {
+    
+                    .list-item {
+                        width: initial;
+                    }
+                }
+            }
+        }
+   
+        .footer-bottom {
+    
+            .property {
+                display: flex;
+                justify-content: space-around;
+                margin: 15px 0 0;
+                padding: 10px;
+    
+                .property-text {
+                    align-self: center;
+                    font-size: 1rem;
+                }
+    
+                .property-logo {
+                    align-self: center;
+                    width: 100px;
+                    margin-left: 6px;
+                }
+            }
+
+            .powered {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------------- */
+/*              Footer dashboard styles              */
+/* ------------------------------------------------- */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    &.dashboard {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 8vh;
+        margin: 0;
+        padding: 0;
+        
+        .container {
+            align-self: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0;
+            padding: 0;
+
+            .brand {
+                display: none;
+            }
+        
+            .navigation {
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                align-self: center;
+
+                .legal-menu {
+                    background-color: $light-primary;
+                    text-transform: uppercase;
+                    padding: 0;
+                    font-size: 0.8rem;
+
+                    &.legal-button {
+                        color: $light-primary;
+                        background-color: transparent;
+                        border: solid $light-primary 1px;
+
+                        &:hover, &:focus, &:active {
+                            color: $brand-alternative;
+                            border: solid $brand-alternative 1px;
+                        }
+                    }
+                }
+        
+                .navigation-list {
+                    display: none;
+                }
+            }
+
+            .powered {
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                align-self: center;
+    
+                .powered-text {
+                    align-self: center;
+                    font-size: 0.8rem;
+                }
+    
+                .powered-logo {
+                    align-self: center;
+                    margin: 0 5px;
+
+                    img {
+                        width: 60px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mq('large-screen') { 
+
+    footer {
+
+        &.dashboard {
+            
+            .container {
+                padding: 0 5%;
+
+                .brand {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    align-self: center;
+                    
+                    .brand-logo {
+                        align-self: center;
+                        width: 30px;
+                        margin-right: 10px;
+                    }
+            
+                    .brand-text {
+                        align-self: center;
+                        font-size: 1rem;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .navigation {
+                    width: 50%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-self: center;
+    
+                    .legal-menu {
+                        display: none;
+                    }
+    
+                    .navigation-list {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        overflow: hidden;
+
+                        .list-item {
+                            display: flex;
+                            justify-content: center;
+                            margin: 0 5px;
+        
+                            .list-item-link {
+                                padding: 10px;
+                                color: $light-primary;
+                                text-align: center;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                font-size: 0.8rem;
+                                transition: all 0.2s ease-in-out;
+        
+                                border: solid transparent 1px;
+        
+                                &:hover {
+                                    color: $brand-alternative;
+                                    border: solid $brand-alternative 1px
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .powered {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+        
+                    .powered-text {
+                        align-self: center;
+                        font-size: 0.9rem;
+                    }
+        
+                    .powered-logo {
+                        align-self: center;
+                        margin: 0 5px;
+
+                        img {
+                            width: 100px;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

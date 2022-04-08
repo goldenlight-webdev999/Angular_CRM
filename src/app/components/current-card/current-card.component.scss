@@ -1,0 +1,48 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*           Current card component styles           */
+/* ------------------------------------------------- */
+
+.current-card {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .card-type {
+        width: 100%;
+    }
+
+    .card-logo {
+        margin: 0 auto 25px;
+    }
+
+    .card-digits {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family: monospace;
+    }
+}
+
+@include mq('medium-screen') {
+    .current-card {
+        
+        .card-type {
+            width: 100%;
+        }
+        
+        .card-logo {
+            margin: 0 25px 0 10px;
+        }
+        
+        .card-digits {
+            align-self: center;
+            width: fit-content;
+            margin: 15px 0 15px 20px;
+            font-size: 1.8rem;
+            font-family: monospace;
+        }
+    }              
+}

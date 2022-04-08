@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Metadata</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>File name: {{fileInfo.name}}</h3>
+    <mat-list class="metadata-list" *ngIf="fileInfo.metadata">
+        <mat-list-item *ngFor="let item of fileInfo.metadata; let i = index" class="metadata-item mt-3">
+            <mat-label class="w-25"  *ngIf="extendable">{{item[0]}}: </mat-label>
+            <mat-form-field class="d-block w-75 ml-3" appearance="legacy" *ngIf="extendable && item.length == 2">
+                <mat-label>Metadata value:</mat-label>
+                <input matInput  value="{{item[1][0]}}" (change)="handleMetadataChange($event, i, 1)" [disabled]="!item[1][2]">
+            </mat-form-field>        
+            <mat-form-field *ngIf="extendable && item.length == 3" class="d-block w-75 ml-3">
+                <mat-select [(value)]="item[1][0]" >
+                    <mat-option *ngFor="let vOption of item[2]" value="{{vOption}}">{{vOption}}</mat-option>
+                </mat-select>
+              </mat-form-field>    
+            <mat-icon mat-list-icon *ngIf="!extendable">bug_report</mat-icon>
+            <h3 mat-line class="metadata-title" *ngIf="!extendable">{{ item[0] | titlecase }}</h3>
+            <p mat-line class="metadata-info" *ngIf="!extendable">
+                <span>{{ isObject(item[1]) ? item[1][0] : item[1] }}</span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Close</button>
+  <button mat-button (click)="saveMetadata()" [disabled]="!validateMetadata()" *ngIf="extendable">Save Changes</button>
+</mat-dialog-actions>

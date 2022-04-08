@@ -1,0 +1,130 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*                 Legal page styles                 */
+/* ------------------------------------------------- */
+
+.legal-section {
+    font-family: $font-primary;
+    color: $dark-primary;
+    background-color: $light-primary;
+    padding: 50px 30px;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: $brand-alternative !important;
+    cursor: pointer;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+.section-p1 {
+    color: $brand-alternative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    padding-top: 100px;
+}
+
+.section-p2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+.section-p3 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    padding-left: 10px;
+}
+
+.section-p4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-left: 10px;
+}
+
+ol.list-subcounters {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol.list-subcounters > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol.list-subcounters > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+.table {
+    margin-bottom: 35px;
+
+    thead {
+        color: $light-primary;
+        background-color: $dark-primary;
+
+        th {
+            border: none;
+        }
+    }
+}
+
+.last-modified {
+    width: fit-content;
+    margin: 35px auto 0;
+    padding: 15px;
+    background-color: $brand-alternative;
+    
+    .small-text {
+        color: $light-primary;
+        font-size: 0.8rem;
+    }
+}
+
+@include mq('medium-screen') {
+    .legal-section {
+        padding: 50px 20%;
+    }
+
+    .section-p1 {
+        font-size: 2.5rem;
+    }
+
+    .section-p2 {
+        font-size: 1.6rem;
+    }
+
+    .section-p3 {
+        font-size: 1.3rem;
+    }
+
+    .section-p4 {
+        font-size: 1.1rem;
+    }
+
+    .last-modified {
+        margin: 35px 0 0;
+        
+        .small-text {
+            font-size: 0.9rem;
+        }
+    }
+}

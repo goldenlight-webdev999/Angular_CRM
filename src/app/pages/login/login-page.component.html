@@ -1,0 +1,61 @@
+<div class="login-page-container">
+    <div class="card login-container">
+        <div class="cancel">
+            <a (click)="cancel()">
+                <mat-icon>cancel</mat-icon>
+            </a>
+        </div>
+
+        <div class="logo">
+            <img class="brand-logo" src="assets/img/metacleaner_logo_only_dark.svg" />
+        </div>
+        <p class="brand-text">MetaCleaner</p>
+
+        <form class="metacleaner-form" [formGroup]="loginForm" novalidate>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email address*" formControlName="email" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required maxlength="64" autofocus />
+                <div *ngIf="submitted && form.email.errors" class="form-invalid">
+                    <i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.email, 'email address', '', '64') }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password*" autocomplete="on" formControlName="password" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" required minlength="8" />
+                <div *ngIf="submitted && form.password.errors" class="form-invalid">
+                    <i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.password, 'password', '8') }}
+                </div>
+            </div>
+
+            <div class="form-group captcha">
+                <re-captcha [site_key]="gCaptchaKey" (captchaResponse)="validateCaptcha($event)" required></re-captcha>
+                <div *ngIf="submitted && !validCaptcha" class="form-invalid">
+                    <div *ngIf="submitted && !validCaptcha"><i class="material-icons error-icon">error_outline</i> Captcha field is required</div>
+                </div>
+            </div>
+
+            <div class="action">
+                <button *ngIf="!loading" mat-button class="button-dark full-width disable-overlay" (click)="login()"><span>Sign in</span></button>
+
+                <div *ngIf="loading">
+                    <app-loading [button]="true"></app-loading>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div *ngIf="!isEmailVerified" class="alert-danger">
+                    <i class="material-icons error-icon">error_outline</i> Your email needs to be verified! If verification email is not in your inbox please check the Spam/Junk Folder. <button mat-button class="button-dark full-width disable-overlay" (click)="sendEmailVerification()" ><span>Resend verification email</span></button>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="isPasswordWrong">
+                <div class="alert-danger">
+                    <i class="material-icons error-icon">error_outline</i> You have entered wrong password! <button mat-button class="button-dark full-width disable-overlay" (click)="sendResetPassword()" ><span>Reset my password</span></button>
+                </div>
+            </div>
+
+
+        </form>
+
+        <p>Don't have an account yet? <a class="link" (click)="goRegisterPage(plan)">Register</a></p>
+
+    </div>
+</div>

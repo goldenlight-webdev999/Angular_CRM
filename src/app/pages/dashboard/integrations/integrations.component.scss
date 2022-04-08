@@ -1,0 +1,390 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*           Integrations dashboard styles           */
+/* ------------------------------------------------- */
+
+.integrations-container {
+    width: 100%;
+    height: 84vh;
+    display: inline-block;
+    padding: 20px;
+    color: $dark-primary;
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-height: 90%;
+
+        .card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-height: 100%;
+            overflow-y: auto;
+            margin-bottom: 35px;
+
+            color: $dark-primary;
+        }
+
+        .integrations-section {
+            width: 100%;
+
+            .card-title {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                white-space: normal;
+            }
+
+            .integrations-content {
+                display: flex;
+                flex-wrap: wrap;
+
+                max-height: 90%;
+                overflow-y: auto;
+
+                .content {
+                    width: 100%;
+
+                    .subtitle {
+                        margin-bottom: 5px;
+                        font-size: 1rem;
+                    }
+
+                    .plans {
+                          display: flex;
+                          justify-content: space-around;
+                          flex-wrap: wrap;
+
+                        .title {
+                            width: 100%;
+                            margin: 15px 0;
+                            text-align: center;
+                        }
+
+                        .plan {
+                            width: 100%;
+                            margin: 15px 0;
+                        }
+                    }
+
+                    .metacleaner-form {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        padding: 10px 5px 15px;
+
+                        .form-field {
+                            width: 100%;
+                            //margin: 15px 0 0;
+                            padding: 10px;
+                            font-size: 1rem;
+
+                            &.flex {
+                                display: flex;
+                                align-items: center;
+                                flex-wrap: wrap;
+
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            .mat-error {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                font-size: 0.8rem;
+
+                                .error-icon {
+                                    margin-right: 4px;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+
+                        .form-field-action {
+                            width: 100%;
+                            margin: 20px 15px;
+
+                            button {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .applications-list {
+                        padding: 15px 5px;
+
+                        .application-panel {
+                            box-shadow: none;
+                            color: $dark-primary;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+                            .application-panel-header {
+                                padding: 0 12px;
+                            }
+
+                            .application-panel-title {
+                                display: flex;
+                                align-content: center;
+                                font-size: 1.1rem;
+
+                                max-width: 40%;
+                                color: $dark-primary;
+
+                                .mat-icon {
+                                  margin: 0 5px 0 0;
+                                }
+                            }
+
+                            .application-panel-description {
+                                display: none;
+                            }
+
+                            /deep/ .mat-expansion-panel-body {
+                                padding: 0 16px 16px;
+                            }
+
+                            .application-panel-body {
+                                width: 100%;
+
+                                .info {
+                                    display: block;
+                                    margin: 0 0 15px;
+                                }
+
+                                .application-info {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 100%;
+                                    padding: 0 5px;
+
+                                    .application-field {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-wrap: nowrap;
+                                        width: 100%;
+                                        margin: 0 10px;
+                                        padding: 10px 0;
+                                        font-size: 1rem;
+                                    }
+
+                                    .field-input {
+                                        width: 100%;
+                                    }
+
+                                    .field-button {
+                                        margin: 0 10px;
+                                    }
+                                }
+
+                                .application-endpoints {
+                                    display: flex;
+                                    flex-wrap: wrap;
+
+                                    justify-content: space-around;
+                                    margin-bottom: 25px;
+
+                                    .endpoint {
+                                        width: 100%;
+                                        text-align: center;
+                                        margin: 10px 0;
+                                        padding: 10px 15px;
+                                        border: solid $dark-primary 1px;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            color: $light-primary;
+                                            background-color: $brand-alternative;
+                                            border: solid $brand-alternative 1px;
+                                        }
+                                    }
+                                }
+
+                                .application-panel-body-action {
+
+                                    button {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .chart {
+                    width: 100%;
+                    align-self: flex-start;
+                    margin: 20px 0;
+                    padding: 20px;
+
+                    .logo {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding: 40px 10px 10px;
+
+                        .brand-logo {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+                        .brand-text {
+                            width: 100%;
+                            margin: 20px 0;
+                            font-size: 2.4rem;
+                            color: $dark-primary;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mq('large-screen') {
+
+    .xl-hide {
+        display: none !important;
+    }
+
+    .integrations-container {
+
+        .grid {
+
+            .card {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+
+                margin-bottom: 0;
+            }
+
+            .integrations-section {
+
+                .integrations-content {
+
+                    .content {
+
+                        .metacleaner-form {
+                            padding: 0 10px;
+
+                            .form-field {
+
+                                &.flex {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-wrap: nowrap;
+                                }
+                            }
+
+                            .form-field-action {
+                                width: fit-content;
+                                margin: 0 10px;
+                            }
+                        }
+
+                        .applications-list {
+                            padding: 20px 10px 15px;
+
+                            .application-panel {
+
+                                .panel-header {
+                                    display: flex;
+                                    align-content: center;
+                                    font-size: 1.1rem;
+                                }
+
+                                .application-panel-title {
+                                    max-width: 30%;
+                                    color: $dark-primary;
+
+                                    .mat-icon {
+                                        margin-right: 5px;
+                                    }
+                                }
+
+                                .application-panel-description {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .size {
+                                        margin-right: 15px;
+                                    }
+                                }
+
+                                .application-panel-body {
+
+                                    .application-info {
+                                        flex-wrap: nowrap;
+
+                                        .application-field {
+                                            flex-wrap: nowrap;
+                                            width: 50%;
+                                            margin: 0;
+                                        }
+                                    }
+
+                                    .application-endpoints {
+
+                                        .endpoint {
+                                            width: fit-content;
+                                        }
+                                    }
+
+                                    .application-panel-body-action {
+                                        display: flex;
+                                        justify-content: flex-end;
+
+                                        button {
+                                            width: fit-content;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @include mq('extra-large-screen') {
+
+                        .content {
+                            width: 60%;
+
+                            .plans {
+
+                                .title {
+                                    width: 100%;
+                                    margin: 15px 0;
+                                    padding-left: 10px;
+                                    text-align: left;
+                                }
+
+                                .plan {
+                                    width: 40%;
+                                    margin: 0 0 60px;
+                                }
+                            }
+                        }
+
+                        .chart {
+                            width: 40%;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

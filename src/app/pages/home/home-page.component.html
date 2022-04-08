@@ -1,0 +1,99 @@
+<!-- Home page -->
+
+<!-- Header -->
+<app-header
+    (home)="headerNavigation('home')"
+    (features)="headerNavigation('features')"
+    (plugins)="headerNavigation('plugins')"
+    (pricing)="headerNavigation('pricing')"
+    (about)="headerNavigation('about')"
+    (contact)="headerNavigation('contact')">
+</app-header>
+
+<!-- Main section -->
+<header id="home" class="masthead">
+    <div class="intro-body">
+        <div class="container home-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="brand-heading">MetaCleaner helps you stay anonymous</h1>
+                    <p class="intro-text">Clean your files MetaData online</p>
+                </div>
+
+                <div class="col-lg-12 mx-auto pt-3 pb-4">
+                    <app-uploader [allowedExtensions]="allowedExtensions"></app-uploader>
+                </div>
+
+                <div class="col-lg-12 mt-4 mx-auto">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card details">
+                                <div class="body-details">
+                                    <mat-icon class="icon-details">offline_bolt</mat-icon>
+                                    <h5 class="title-details">Fast</h5>
+                                    <p class="card-text text-details">Quickly drag and drop your file and it will automatically spelt properly, and download onto your computer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card details">
+                                <div class="body-details">
+                                    <mat-icon class="icon-details">group_work</mat-icon>
+                                    <h5 class="title-details">Reliable</h5>
+                                    <p class="text-details">Only metadata will be removed, the rest of your information will not be affected.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card details">
+                                <div class="body-details">
+                                    <mat-icon class="icon-details">share</mat-icon>
+                                    <h5 class="title-details">Multiple Filetypes</h5>
+                                    <p class="text-details">MS Office, LibreOffice, PDFs and multimedia files are supported.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Features section -->
+<section>
+    <div id="features" class="section-container light-section">
+        <app-features></app-features>
+    </div>
+</section>
+
+<!-- Plugins section -->
+<section>
+    <div id="plugins" class="section-container dark-section">
+        <app-plugins></app-plugins>
+    </div>
+</section>
+
+<!-- Pricing section -->
+<section>
+    <div id="pricing" class="section-container light-section">
+        <app-pricing></app-pricing>
+    </div>
+</section>
+
+<!-- About section -->
+<section>
+    <div id="about" class="section-container dark-section">
+        <app-about></app-about>
+    </div>
+</section>
+
+<!-- Contact section -->
+<section>
+    <div id="contact" class="section-container light-section">
+        <app-contact></app-contact>
+    </div>
+</section>
+
+<!-- Footer -->
+<app-footer></app-footer>

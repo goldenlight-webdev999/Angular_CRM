@@ -1,0 +1,52 @@
+@import '../../pages/home/home-page.component.scss';
+
+/* ------------------------------------------------- */
+/*               About section styles                */
+/* ------------------------------------------------- */
+
+.about-section {
+    color: $light-primary;
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 40px 10px 10px;
+
+        .brand-logo {
+            align-self: center;
+            width: 40px;
+        }
+
+        .brand-text {
+            align-self: center;
+            margin-left: 10px;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+
+    .link {
+        color: $brand-alternative;
+        cursor: pointer;
+    }
+}
+
+@include mq('medium-screen') { 
+    .about-section {
+
+        .logo {
+            padding: 60px 10px 10px;
+
+            .brand-logo {
+                width: 120px;
+            }
+
+            .brand-text {
+                align-self: center;
+                font-size: 2.8rem;
+            }
+        }
+    }
+}

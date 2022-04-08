@@ -1,0 +1,56 @@
+<!-- Active subscription -->
+<div class="current-plan" *ngIf="!loading">
+    <div class="plan">
+        <app-plan [plan]="planType" [current]="current" [selected]="selected" [dashboard]="true" [action]="planAction"></app-plan>
+    </div>
+
+    <div class="plan-info">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <p class="item-title">Plan starts on:</p>
+                <span class="item-content">
+                    {{ planData.planStart | date:'longDate' }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Plan ends on: <span class="next-charge"><i class="material-icons icon">update</i> {{ planData.nextCharge }}</span></p>
+                <span class="item-content">
+                    {{ planData.planEnd | date:'longDate' }} 
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Subscription status:</p>
+                <span class="item-content">
+                    {{ planData.subscriptionStatus | titlecase }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Consumption:</p>
+                <span class="item-content">
+                    <div class="chart">
+                        <mat-progress-spinner [value]="percentage" [strokeWidth]="15" class="bandwidth-chart"></mat-progress-spinner>
+                        <div class="bandwidth-text">{{ percentage / 100 | percent:'1.0-2' }}</div>
+                    </div>
+                    <div class="info-chart">
+                        <div>
+                            <p class="title">Current:</p>
+                            <span class="content">
+                                {{ planData.consumption | filesize }}
+                            </span>
+                        </div>
+                        <div>
+                            <p class="title">Traffic Limit:</p>
+                            <span class="content">
+                                {{ trafficLimit | filesize }}
+                            </span>
+                        </div>
+                    </div>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="loading">
+    <app-loading></app-loading>
+</div>

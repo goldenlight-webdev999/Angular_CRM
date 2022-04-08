@@ -1,0 +1,100 @@
+<!-- Features Section -->
+<section class="section-content features-section">
+    <div class="container">
+        <div class="col-lg-12">
+            <h2 class="text-left section-title">Features</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card details">
+                            <div class="body-details">
+                                <mat-icon class="icon-details">cloud_done</mat-icon>
+                                <h5 class="title-details">100% Online</h5>
+                                <p class="card-text text-details">No installation needed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card details">
+                            <div class="body-details">
+                                <mat-icon class="icon-details">timer</mat-icon>
+                                <h5 class="title-details">Fast & Reliable</h5>
+                                <p class="text-details">Files are clean instantly and original format is preserved.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card details">
+                            <div class="body-details">
+                                <mat-icon class="icon-details">security</mat-icon>
+                                <h5 class="title-details">Security</h5>
+                                <p class="text-details">Secure and GDPR compliant. <a class="link" (click)="navigateToItem('additional-info')">(*)</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card details">
+                            <div class="body-details">
+                                <mat-icon class="icon-details">attachment</mat-icon>
+                                <h5 class="title-details">Compatibility</h5>
+                                <p class="text-details">Support for dozens of file types.</p>
+                                <p class="text-details">Check extension list. <a class="link" (click)="navigateToItem('additional-info')">(*)</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 mx-auto">
+                        <div class="card details premium">
+                            <div class="body-details">
+                                <mat-icon class="icon-details">star</mat-icon>
+                                <h5 class="title-details">Premium Services</h5>
+                                <p class="text-details">High volume of traffic allowed (Up to 100 GB per month).</p>
+                                <p class="text-details">API integration for multiple Apps and Services. Connect your corporate applications with Metacleaner to ensure privacy.</p>
+                                <p class="text-details">Historical Data of cleaned file types. Reports and statistics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mx-auto text-center mt-3">
+                        <div class="action">
+                            <button mat-button class="button-dark disable-overlay" (click)="navigateToItem('pricing')"><span class="extra">Go premium. </span><span>Check our pricing plans</span></button>
+                        </div>
+                    </div>
+
+                    <div id="additional-info">
+                        <div class="col-sm-12 mx-auto mt-5">
+                            <ul type="none">
+                                <li class="py-1">(*) Encrypted communication.</li>
+                                <li class="py-1">(*) Only metadata will be removed, the rest of your information will not be affected.</li>
+                                <li class="py-1">(*) We don't store your data or metadata, it only removes the metadata from the files you send and returns the clean file.</li>
+                            </ul>  
+                        </div>
+                        
+                        <div class="extensions">
+                            <mat-accordion>
+                                <mat-expansion-panel class="extensions-container mat-elevation-z0">
+                        
+                                    <mat-expansion-panel-header class="panel-header">
+                                        <mat-panel-title class="panel-title">Extension list</mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                
+                                    <mat-list class="extensions-list">
+                                        <mat-list-item *ngFor="let extension of extensions" class="extensions-item">
+                                            <span>.{{ extension }}</span>
+                                        </mat-list-item>
+                                    </mat-list>
+                        
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

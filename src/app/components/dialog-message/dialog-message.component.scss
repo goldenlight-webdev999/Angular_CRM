@@ -1,0 +1,44 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*               Dialog message styles               */
+/* ------------------------------------------------- */
+
+.dialog-container {
+
+    .dialog-title {
+        margin: 0;
+        padding: 15px;
+
+        color: $dark-primary;
+        font-family: $font-primary;
+        font-size: 1.2rem;
+        font-weight: 200;
+    }
+
+    .dialog-content {
+        margin: 0 auto;
+
+        .dialog-text {
+            color: $dark-primary;
+            font-family: $font-primary;
+            font-size: 1rem;
+        }
+    }
+
+    .dialog-action {
+        margin: 20px 0 0;
+        padding: 10px;
+
+        button {
+            margin: 0 15px;
+        }
+    }
+}
+
+/deep/ .mat-dialog-container {
+    background-color: $light-primary;
+    border-top: solid 10px $dark-primary;
+    border-radius: 10px !important;
+}

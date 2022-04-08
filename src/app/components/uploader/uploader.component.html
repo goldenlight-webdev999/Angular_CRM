@@ -1,0 +1,102 @@
+<!-- Uploader component -->
+<div class="upload-file">
+    <div class="upload-btn" [class.extended]="extended" *ngIf="!loading">
+        <div class="drop-area" *ngIf="extended">
+            <i class="material-icons cloud-icon">cloud_upload</i>
+            <button mat-button class="browse-button">Choose files to Clean</button>
+            <span>or drag and drop them here</span>
+            <label class="max-size-label">Maximum File Size {{ maxFileSize | filesize }}</label>
+        </div>
+
+        <button mat-button class="file-button" *ngIf="!extended">
+            <i class="material-icons">cloud_upload</i>&nbsp; Drop your files
+        </button>
+
+        <input class="file-input" type="file" name="upload[]" multiple data-files="" (change)="onFilesChanged($event)" [accept]="computedAcceptedExtension" />
+    </div>
+    <div class="file-table px-5" *ngIf="extended && fileInfo.length">
+        <div class="d-md-flex align-items-center justify-content-between mt-3 ">
+            <p class="mb-0 text-left">File List</p>
+            <button mat-button class="browse-button my-0 mx-0" [disabled]="!selection.hasValue()" (click)="processFiles()">Clean all metadata of selected files</button>
+        </div>
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null"
+                                [checked]="selection.isSelected(row)"
+                                [disabled]="row.status=='Cleaned'">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef>Type</th>
+                <td mat-cell *matCellDef="let element">{{element.type}}</td>
+            </ng-container>
+            <ng-container matColumnDef="size">
+                <th mat-header-cell *matHeaderCellDef>Size</th>
+                <td mat-cell *matCellDef="let element">{{element.size}} KB</td>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.status == "New" ? "" : element.status}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button>
+                        <mat-icon mat-list-icon>build</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns;"
+                class="example-element-row"
+                (click)="openDialog(element)"
+            >
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>
+
+<!-- <div class="file-metadata">
+    <mat-accordion *ngIf="extended">
+        <mat-expansion-panel class="metadata-container">
+
+            <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                    <span matBadge="{{ metadataCount }}" matBadgeOverlap="true" matBadgeColor="warn">Cleaned metadata &nbsp;</span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <span class="panel-info" *ngIf="!metadata">No recent metadata cleaned</span>
+        
+            <mat-list class="metadata-list" *ngIf="metadata">
+                <mat-list-item *ngFor="let item of metadata" class="metadata-item">
+                    <mat-icon mat-list-icon>bug_report</mat-icon>
+                    <h3 mat-line class="metadata-title">{{ item[0] | titlecase }}</h3>
+                    <p mat-line class="metadata-info">
+                        <span>{{ item[1] }}</span>
+                    </p>
+                </mat-list-item>
+            </mat-list>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div> -->

@@ -1,0 +1,32 @@
+<!-- Historical page -->
+<div class="historical-container">
+    <h1 class="mat-h1">File cleaned history</h1>
+    <mat-grid-list cols="1" rowHeight="calc(100% - 0px)" class="grid">
+        <mat-grid-tile class="historical">
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="card-title">
+                        Historical
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="historical-content">
+                    <div *ngIf="history?.length > 0">
+                        <mat-list *ngIf="!loading">
+                            <mat-list-item *ngFor="let item of history" class="historic-item">
+                                <mat-icon mat-list-icon>insert_drive_file</mat-icon>
+                                <h3 mat-line class="historic-title">{{ item.fileName }}</h3>
+                                <p mat-line class="historic-info">
+                                    <span>{{ item.dateAdded | date:'fullDate' }}</span>
+                                    <span *ngIf="item.hasOwnProperty('originalSize')">{{ item.originalSize | filesize }}</span>
+                                </p>
+                            </mat-list-item>
+                        </mat-list>
+                        <div *ngIf="loading">
+                            <app-loading></app-loading>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,172 @@
+<!-- Integrations page -->
+<!-- <app-selection-modal></app-selection-modal> -->
+
+<div class="integrations-container">
+    <h1 class="mat-h1">External integrations</h1>
+    <mat-grid-list cols="1" rowHeight="calc(100% - 0px)" class="grid" (window:resize)="onResize($event)" *ngIf="!loading">
+        <mat-grid-tile class="integrations-section">
+
+            <!-- User HAS NOT subscriptions -->
+            <mat-card class="card" *ngIf="!subscriptions">
+                <mat-card-header>
+                    <mat-card-title class="card-title">
+                        Upgrade your subscription
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content class="integrations-content">
+                    <div class="content">
+                        <p class="subtitle" *ngIf="subscriptionStatus !== 'pending'">You need a Advance or Enterprise plan to integrate your external apps.</p>
+                        <p class="subtitle" *ngIf="subscriptionStatus === 'pending'">Your subscription is not active so you can not integrate more external apps.</p>
+
+                        <div class="plans">
+                            <h2 class="mat-h2 title">Select plan</h2>
+                            <div class="plan">
+                                <app-plan [plan]="'advance'" [current]="advanceActive" [selected]="advanceActive" [dashboard]="true" [action]="actionAdvanceMsg"></app-plan>
+                            </div>
+                            <div class="plan">
+                                <app-plan [plan]="'enterprise'" [current]="enterpriseActive" [selected]="enterpriseActive" [dashboard]="true" [action]="actionEnterpriseMsg"></app-plan>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart">
+                        <div class="logo">
+                            <img class="brand-logo" src="./../../../../assets/img/metacleaner_logo_only_dark.svg" alt="MetaCleaner logo">
+                            <p class="brand-text">MetaCleaner</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+
+            <!-- User HAS subscriptions -->
+            <mat-card class="card" *ngIf="subscriptions">
+
+                <mat-card-header>
+                    <mat-card-title class="card-title">
+                        Integrate an external application
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content class="integrations-content">
+
+                    <div class="content">
+
+                        <form class="metacleaner-form" [formGroup]="externalAppsForm" autocomplete="on" novalidate>
+
+                            <div class="form-field flex">
+                                <mat-form-field class="form-field">
+                                    <input matInput type="text" placeholder="App name" [formControl]="name" required minlength="4" maxlength="40" (blur)="name.markAsUntouched({onlySelf: true})">
+                                    <mat-error *ngIf="submitted && name.invalid"><i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.name, 'name', '4', '60') }}</mat-error>
+                                    <mat-hint align="end">e.g.: ExternalApp</mat-hint>
+                                </mat-form-field>
+
+                                <mat-form-field class="form-field">
+                                    <input matInput type="text" placeholder="App URL" [formControl]="redirect" required maxlength="60" (blur)="redirect.markAsUntouched({onlySelf: true})">
+                                    <mat-error *ngIf="submitted && redirect.invalid"><i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.redirect, 'redirect', '', '12') }}</mat-error>
+                                    <mat-hint align="end">e.g.: http://external-app.com</mat-hint>
+                                </mat-form-field>
+
+                                <div class="form-field-action">
+                                    <button *ngIf="!loadingForm" mat-button class="button-dark disable-overlay" (click)="addApplication()">
+                                        <span class="button-text"><mat-icon>add</mat-icon> Add</span>
+                                    </button>
+
+                                    <div *ngIf="loadingForm">
+                                        <app-loading [button]="true"></app-loading>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="applications-list" *ngIf="applications?.length > 0">
+                            <p class="main-subtitle">Integrated apps</p>
+                            <mat-accordion>
+                                <mat-expansion-panel class="application-panel" *ngFor="let app of applications">
+                                    <mat-expansion-panel-header class="application-panel-header" (click)="initPasswordInputs()">
+                                        <mat-panel-title class="application-panel-title">
+                                            <mat-icon>extension</mat-icon>{{ app.name }}
+                                        </mat-panel-title>
+                                        <mat-panel-description class="application-panel-description">
+                                            <span class="panel-header text-ellipsis">{{ app.redirectUris[0] }}</span>
+                                            <span class="panel-header size">{{ app.traffic | filesize }}</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+
+                                    <div class="application-panel-body">
+
+                                        <span class="info xl-hide">Application information:</span>
+                                        <div class="application-info xl-hide">
+                                            <div class="application-field">
+                                                <mat-form-field class="field-input">
+                                                    <input matInput type="text" placeholder="App URI" value="{{ app.redirectUris[0] }}" disabled>
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div class="application-field">
+                                                <mat-form-field class="field-input">
+                                                    <input matInput type="text" placeholder="App consumption" value="{{ app.traffic | filesize }}" disabled>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                        <span class="info">Authorization information:</span>
+                                        <div class="application-info">
+                                            <div class="application-field">
+                                                <mat-form-field class="field-input">
+                                                    <input matInput [type]="showId ? 'text' : 'password'" placeholder="Client id" value="{{ app.id }}" disabled>
+                                                </mat-form-field>
+                                                <button mat-icon-button class="field-button" (click)="showId = !showId">
+                                                    <mat-icon>{{ showId ? 'visibility_off' : 'visibility' }}</mat-icon>
+                                                </button>
+                                            </div>
+
+                                            <div class="application-field">
+                                                <mat-form-field class="field-input">
+                                                    <input matInput [type]="showSecret ? 'text' : 'password'" placeholder="Client secret" value="{{ app.secret }}" disabled>
+                                                </mat-form-field>
+                                                <button mat-icon-button class="field-button" (click)="showSecret = !showSecret">
+                                                    <mat-icon>{{ showSecret ? 'visibility_off' : 'visibility' }}</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <span class="info">Authorization endpoints:</span>
+                                        <div class="application-endpoints">
+                                            <p class="endpoint" matTooltip="The endpoint for authorization server.">https://api.metacleaner.com/oauth/v2/auth</p>
+                                            <p class="endpoint" matTooltip="The endpoint for authentication server.">https://api.metacleaner.com/oauth/v2/token</p>
+                                        </div>
+
+                                        <div class="application-panel-body-action">
+                                            <button mat-button class="button-danger disable-overlay" (click)="removeApplication(app.id)">
+                                                <span class="button-text"><mat-icon>delete</mat-icon> Delete</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+
+                    </div>
+
+                    <div class="chart">
+                        <div *ngIf="pageLoaded">
+                            <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType" [options]="chartOptions" [colors]="chartColors"></canvas>
+                        </div>
+                        <div class="logo" *ngIf="!pageLoaded">
+                            <img class="brand-logo" src="./../../../../assets/img/metacleaner_logo_only_dark.svg" alt="MetaCleaner logo">
+                            <p class="brand-text">MetaCleaner</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <div *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>

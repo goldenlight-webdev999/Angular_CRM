@@ -1,0 +1,11 @@
+<div class="login-page-container">
+    <div class="card login-container">
+        <div class="logo">
+            <img class="brand-logo" src="assets/img/metacleaner_logo_only_dark.svg" />
+        </div>
+        <p class="brand-text">MetaCleaner</p>
+        <p *ngIf="isEmailVerified">The email was successfuly verified, you can now log in.
+            <button mat-button class="button-dark full-width disable-overlay" (click)="goLoginPage()" ><span>Log In</span></button>
+        </p>
+    </div>
+</div>

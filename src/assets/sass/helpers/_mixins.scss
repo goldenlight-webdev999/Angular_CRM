@@ -1,0 +1,19 @@
+$breakpoints: (
+  'extra-small-screen': 480px,
+  'small-screen': 640px,
+  'medium-screen': 768px,
+  'large-screen': 960px,
+  'extra-large-screen' : 1200px
+);
+
+@mixin mq($width, $type: min) {
+  @if map-has-key($breakpoints, $width) {
+    $width: map-get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

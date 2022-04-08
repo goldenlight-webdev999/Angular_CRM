@@ -1,0 +1,82 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*         My subscriptions component styles         */
+/* ------------------------------------------------- */
+
+.plans {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .title {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center; 
+    }
+        
+    .current-plan {
+        width: 100%;
+    }
+
+    .divider {
+        width: 100%;
+
+        margin: 25px 0;
+        border: solid 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .next-plan {
+        width: 100%;
+    }
+
+    .other-plans {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .plan {
+            width: 100%;
+            margin: 15px 0;
+        }
+    }
+}
+
+@include mq('extra-large-screen') {
+    .plans {
+    
+        .title {
+            width: 100%;
+            margin: 15px 0;
+            padding-left: 10px;
+            text-align: left; 
+        }
+            
+        .current-plan {
+            width: 46%;
+        }
+    
+        .divider {
+            width: 0;
+    
+            margin: 0 10px;
+            border: solid 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .next-plan {
+            width: 46%;
+        }
+    
+        .other-plans {
+            align-content: flex-start;
+            width: 46%;  
+    
+            .plan {
+                width: 46%;
+                margin: 0;
+            }
+        }
+    }
+}

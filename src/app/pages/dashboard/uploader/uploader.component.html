@@ -1,0 +1,35 @@
+<!-- Uploader page -->
+<div class="uploader-container">
+    <h1 class="mat-h1">Upload file to clean</h1>
+    <mat-grid-list cols="1" rowHeight="calc(100% - 0px)" class="grid">
+        <mat-grid-tile class="uploader">
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="card-title">
+                        Uploader
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="uploader-content">
+                    <app-uploader *ngIf="!loading"
+                        [extended]="true"
+                        [authenticated]="authenticated"
+                        [allowedExtensions]="allowedExtensions"
+                        [maxFileSize]="maxFileSize"
+                        [userTraffic]="userTraffic"
+                        [trafficLimit]="trafficLimit">
+                    </app-uploader>
+
+                    <div class="information" *ngIf="!loading">
+                        <p class="item"><mat-icon>security</mat-icon>&nbsp; Encrypted communication.</p>
+                        <p class="item"><mat-icon>security</mat-icon>&nbsp; Only metadata will be removed, the rest of your information will not be affected.</p>
+                        <p class="item"><mat-icon>security</mat-icon>&nbsp; We don't store your data or metadata, it only removes the metadata from the files you send and returns the clean file.</p>
+                    </div>
+
+                    <div *ngIf="loading">
+                        <app-loading></app-loading>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

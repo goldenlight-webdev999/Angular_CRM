@@ -1,0 +1,179 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*               Dashboard page styles               */
+/* ------------------------------------------------- */
+
+.sidenav-container {
+    height: 84vh;
+
+    .sidenav {
+        width: 220px;
+        height: 100%;
+        box-shadow: 3px 0 6px rgba(0,0,0,.24);
+
+        .mat-nav-list {
+            padding-top: 0;
+            height: 100%;
+
+            .nav-link {
+                color: $dark-primary;
+                font-size: 1.1rem;
+                height: 60px;
+                padding: 0;
+            }
+
+            .user-account {
+                color: $light-primary !important;
+                background-color: $dark-primary;
+                text-transform: uppercase;
+                cursor: auto;
+
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .navigation-links {
+                max-height: calc(100% - 161px);
+                overflow-y: auto;
+
+                .active {
+                    color: $light-primary;
+                    background-color: $brand-alternative;
+                }
+            }
+
+            .mat-divider {
+                margin: 10px auto;
+                width: 90%;
+            }
+
+            .bottom-links {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                padding: 10px 0;
+
+                .nav-link {
+                    width: 50%;
+
+                    .vertical-link {
+                        width: 100%;
+                        text-align: center;
+
+                        span {
+                            width: 100%;
+                            margin: 0;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mat-sidenav-fixed {
+        position: absolute;
+    }
+
+    .mat-sidenav-content {
+        overflow-y: auto;
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.toolbar-content {
+    color: $light-primary;
+    background-color: $dark-primary;
+    text-transform: uppercase;
+    height: 8vh;
+
+    .navbar-brand {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: fit-content;
+        justify-content: flex-end;
+
+        .brand {
+            text-decoration: none;
+
+            .brand-logo {
+                display: initial;
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                fill: $light-primary;
+            }
+
+            .brand-text {
+                color: $light-primary;
+                letter-spacing: 1px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@include mq('large-screen') {
+
+    .toolbar-content {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        .navbar-brand {
+            justify-content: flex-start;
+
+            .brand {
+                border-radius: 15px;
+                padding: 10px;
+
+                text-decoration: none;
+
+                .brand-logo {
+                    display: initial;
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+                    fill: $light-primary;
+                }
+
+                .brand-text {
+                    color: $light-primary;
+                    letter-spacing: 1px;
+                    font-weight: 700;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.8);
+                }
+
+                &:hover .brand-logo {
+                    fill: $dark-primary;
+                }
+
+                &:hover .brand-text {
+                    color: $dark-primary;
+                    fill: $dark-primary;
+                }
+            }
+        }
+    }
+}
+
+.user-name {
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    display:inline-block;
+}

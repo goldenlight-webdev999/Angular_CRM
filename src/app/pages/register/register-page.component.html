@@ -1,0 +1,89 @@
+<div class="register-page-container">
+    <div class="card register-container">
+        <div class="cancel">
+            <a (click)="cancel()">
+                <mat-icon>cancel</mat-icon>
+            </a>
+        </div>
+
+        <div class="logo">
+            <img class="brand-logo" src="assets/img/metacleaner_logo_only_dark.svg" />
+        </div>
+        <p class="brand-text">MetaCleaner</p>
+
+        <form class="metacleaner-form" [formGroup]="registerForm" novalidate>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email address*" formControlName="email" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required maxlength="64" autofocus />
+                <div *ngIf="submitted && form.email.errors" class="form-invalid">
+                    <i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.email, 'email address', '', '64') }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name*" formControlName="name" [ngClass]="{ 'is-invalid': submitted && form.name.errors }" required minlength="4" maxlength="32" />
+                <div *ngIf="submitted && form.name.errors" class="form-invalid">
+                    <i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.name, 'name', '4', '32') }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password*" autocomplete="on" formControlName="password" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" required minlength="8" />
+                <div *ngIf="submitted && form.password.errors" class="form-invalid">
+                    <i class="material-icons error-icon">error_outline</i> {{ getErrorMessage(form.password, 'password', '8') }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password2" class="form-control" placeholder="Confirm Password*" autocomplete="on" formControlName="password2" [ngClass]="{ 'is-invalid': submitted && form.password2.errors }" />
+                <div *ngIf="submitted && form.password2.errors" class="form-invalid">
+                    <div *ngIf="form.password2.errors?.equalTo"><i class="material-icons error-icon">error_outline</i> Password not match</div>
+                </div>
+            </div>
+               
+            <div class="form-group mb-2 mt-4">
+                <div class="form-check">
+                    <label class="form-check-label" for="legal">
+                        <span class="check-text">
+                            I have read and accept the 
+                            <a [routerLink]="['/service-agreement']">Service Agreement</a>,
+                            <a [routerLink]="['/privacy-policy']">Privacy Policy</a>,
+                            <a [routerLink]="['/legal-notice']">Legal notice</a> and
+                            <a [routerLink]="['/cookies']">Cookies policy</a>
+                        </span>
+                        <input type="checkbox" name="legal" id="legal" class="form-check-input" value="" formControlName="legal" [ngClass]="{ 'is-invalid': submitted && form.legal.errors }" required >
+                        <span class="checkmark"></span>
+                        <div *ngIf="submitted && form.legal.errors" class="form-invalid">
+                            <div *ngIf="form.legal.errors.required"><i class="material-icons error-icon">error_outline</i> It is necessary that you accept the Privacy Policy, Legal Notice and Cookies Policy in order to send the form</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="commercial">
+                        <span class="check-text">
+                            I accept receiving commercial communications
+                        </span>
+                        <input type="checkbox" name="commercial" id="commercial" class="form-check-input" value="" formControlName="commercial" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group captcha">
+                <re-captcha [site_key]="gCaptchaKey" (captchaResponse)="validateCaptcha($event)"></re-captcha>
+                <div *ngIf="submitted && !validCaptcha" class="form-invalid">
+                    <div *ngIf="submitted && !validCaptcha"><i class="material-icons error-icon">error_outline</i> Captcha field is required</div>
+                </div>
+            </div>
+
+            <div class="action">
+                <button *ngIf="!loading" mat-button class="button-dark full-width disable-overlay" (click)="register()"><span>Get started</span></button>
+    
+                <div *ngIf="loading">
+                    <app-loading [button]="true"></app-loading>
+                </div>
+            </div>
+        </form>
+
+        <p>Already have an account? <a class="link" (click)="goLoginPage(plan)">Login</a></p>
+    </div>
+</div>

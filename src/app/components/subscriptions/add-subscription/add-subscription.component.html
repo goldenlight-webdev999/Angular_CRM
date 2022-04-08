@@ -1,0 +1,13 @@
+<!-- Add subscription -->
+<div class="plans">
+    <h2 class="mat-h2 title">Select plan</h2>
+    <div class="plan">
+        <app-plan [plan]="basicPlan" [dashboard]="true" [action]="planAction"></app-plan>
+    </div>
+    <div class="plan">
+        <app-plan [plan]="advancePlan"  [dashboard]="true" [action]="planAction"></app-plan>
+    </div>
+    <div class="plan">
+        <app-plan [plan]="enterprisePlan" [dashboard]="true" [action]="planAction"></app-plan>
+    </div>
+</div>

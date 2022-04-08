@@ -1,0 +1,74 @@
+<!-- Account page -->
+<div class="account-container">
+    <h1 class="mat-h1">Settings</h1>
+    <mat-grid-list [cols]="breakpoint" rowHeight="calc(100% - 0px)" class="grid" (window:resize)="onResize($event)" *ngIf="!loading">
+        <mat-grid-tile class="account-section">
+            <mat-card class="card">
+                <mat-card-header>
+                    <div mat-card-avatar class="header-image"></div>
+                    <mat-card-title class="card-title">
+                        User Info
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="user-info-content">
+                    <div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p class="item-title">
+                                    <span>
+                                        <mat-icon>person</mat-icon>&nbsp; Username:
+                                    </span>
+                                </p>
+                                <span class="item-content">{{ userAccount.userName }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="item-title">
+                                    <span>
+                                        <mat-icon>alternate_email</mat-icon>&nbsp; Email address:
+                                    </span>
+                                </p>
+                                <span class="item-content">{{ userAccount.email }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="item-title">
+                                    <span>
+                                        <mat-icon>date_range</mat-icon>&nbsp; Member since:
+                                    </span>
+                                </p>
+                                <span class="item-content">{{ userAccount.dateAdded | date }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="item-title">
+                                    <span>
+                                        <mat-icon>file_copy</mat-icon>&nbsp; Cleaned files:
+                                    </span>
+                                    <button mat-icon-button (click)="goHistorical()" matTooltip="View historical" matTooltipPosition="below"><mat-icon>history</mat-icon></button>
+                                </p>
+                                <span [ngPlural]="historyCount">
+                                    <ng-template ngPluralCase="=0">You have not cleaned files yet</ng-template>
+                                    <ng-template ngPluralCase="=1">{{ historyCount }} file</ng-template>
+                                    <ng-template ngPluralCase="other">{{ historyCount }} files</ng-template>
+                                </span>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="item-title">
+                                    <span>
+                                        <mat-icon>business_center</mat-icon>&nbsp; Subscription type:
+                                    </span>
+                                    <button mat-icon-button (click)="goPlans()" matTooltip="View plans" matTooltipPosition="below"><mat-icon>monetization_on</mat-icon></button>
+                                </p>
+                                <span class="item-content">
+                                    {{ subscriptionPlan | titlecase }} plan ({{ subscriptionStatus }})
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <div *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>

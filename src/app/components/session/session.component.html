@@ -1,0 +1,15 @@
+<div class="session-container" (window:resize)="onResize($event)">
+
+    <!-- Public and No-Aauthenticated -->
+    <button mat-button *ngIf="!authenticated" (click)="goRegister('free')"><mat-icon>person_add</mat-icon> Sign up</button>
+    <button mat-button *ngIf="!authenticated" (click)="goLogin()"><mat-icon>person</mat-icon> Sign in</button>
+
+    <!-- Public/Private, Authenticated and ResponsiveMode/No-Responsive -->
+    <button mat-button *ngIf="(authenticated && privateMode && !responsiveMode) || (authenticated && !privateMode && responsiveMode) || (authenticated && !privateMode && !responsiveMode)" (click)="goDashboard()">
+        <mat-icon class="user-icon">dashboard</mat-icon>&nbsp; User panel
+    </button>
+    <button mat-button *ngIf="(authenticated && privateMode && !responsiveMode) || (authenticated && !privateMode && responsiveMode) || (authenticated && !privateMode && !responsiveMode)" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>&nbsp; Logout
+    </button>
+
+</div>

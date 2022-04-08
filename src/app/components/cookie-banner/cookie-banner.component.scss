@@ -1,0 +1,64 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*          Cookie-Banner Component Styles           */
+/* ------------------------------------------------- */
+
+.banner {
+    width: 100vw;
+    padding: 20px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.8);
+    color: $light-primary;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    font-family: $font-primary;
+
+    .banner-information {
+        p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .banner-action {
+        margin-left: 15px;
+        margin-right: 15px;
+
+        span {
+          white-space: nowrap;
+        }
+    }
+}
+
+@include mq('large-screen') {
+    .banner {
+        width: 100vw;
+        padding: 20px 20%;
+
+        flex-wrap: nowrap;
+
+        .banner-information {
+
+            p {
+                white-space: nowrap;
+            }
+        }
+
+        .banner-action {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+    }
+}

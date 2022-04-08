@@ -1,0 +1,39 @@
+<!-- Next subscription -->
+<div class="next-plan" *ngIf="!loading">
+    <div class="plan">
+        <app-plan [plan]="planType" [current]="true" [dashboard]="true" [action]="planAction"></app-plan>
+    </div>
+
+    <div class="plan-info">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <p class="item-title">Plan starts on:</p>
+                <span class="item-content">
+                    {{ planData.planStart | date:'longDate' }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Plan ends on:</p>
+                <span class="item-content">
+                    {{ planData.planEnd | date:'longDate' }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Subscription status:</p>
+                <span class="item-content">
+                    {{ planData.subscriptionStatus | titlecase }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                <p class="item-title">Additional info:</p>
+                <span class="item-content">
+                    This plan will begin to be active when the current billing cycle ends.
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="loading">
+    <app-loading></app-loading>
+</div>

@@ -1,0 +1,29 @@
+<!-- My Subscriptions -->
+<div class="plans">
+    <div class="current-plan">
+        <h2 class="mat-h2 title">Current plan</h2>
+        <div class="plan">
+            <app-active-subscription [plan]="currentPlan"></app-active-subscription>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="next-plan" *ngIf="nextPlan.length !== 0">
+        <h2 class="mat-h2 title">Next plan</h2>
+        <div class="plan">
+            <app-next-subscription [plan]="nextPlan"></app-next-subscription>
+        </div>
+    </div>
+
+    <div class="other-plans" *ngIf="nextPlan.length === 0">
+        <h2 class="mat-h2 title">Select plan</h2>
+        <p class="small alert alert-danger">Upgrading your package will result in you losing the existing days of your current subscription and starting a new subscription.</p>
+        <div class="plan">
+            <app-plan [plan]="otherPlans[0]" [dashboard]="true" [action]="planAction"></app-plan>
+        </div>
+        <div class="plan">
+            <app-plan [plan]="otherPlans[1]" [dashboard]="true" [action]="planAction"></app-plan>
+        </div>
+    </div>
+</div>

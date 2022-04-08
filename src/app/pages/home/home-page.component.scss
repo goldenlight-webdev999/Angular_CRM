@@ -1,0 +1,129 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*                Main section styles                */
+/* ------------------------------------------------- */
+
+.masthead {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    text-align: center;
+    color: $light-primary;
+    background: url("../../../assets/img/intro-bg.jpg") no-repeat bottom center scroll;
+    background-color: $dark-primary;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .details {
+        border: none;
+        background-color: transparent;
+        margin: 50px 0 40px;
+
+        .body-details {
+            display: flex;
+            flex-flow: column wrap;
+            
+            .icon-details {
+                width: 100%;
+                font-size: 5em;
+                padding-bottom: 20px;
+            }
+    
+            .title-details {
+                width: 100%;
+                margin-top: 70px;
+            }
+    
+            .text-details {
+                text-align: center;
+            }
+        }
+    }
+    
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+        color: $dark-primary;
+
+        padding: 10px 15px;
+
+        .home-section {
+        
+            .brand-heading {
+                font-size: 2em;
+                text-transform: initial;
+            }
+            
+            .intro-text {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@include mq('medium-screen') {
+    .masthead {
+        height: 100%;
+        padding: 0;
+    
+        margin-bottom: 0;
+    
+        .intro-body {
+            padding-top: 60px;
+
+            .home-section {
+                padding-top: 60px; 
+
+                .brand-heading {
+                    font-size: 3em;
+                    text-transform: initial;
+                }
+        
+                .intro-text {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------------- */
+/*              Sections default styles              */
+/* ------------------------------------------------- */
+
+.section-container {
+    padding: 50px 0;
+
+    &.dark-section {
+        background-color: $dark-primary;
+    }
+
+    &.light-section {
+        background-color: $light-primary;
+    }
+}
+
+.section-content {
+    padding: 50px 15px;
+    font-family: $font-primary;
+    color: $light-primary;
+
+    .section-title {
+        text-align: left;
+        margin-bottom: 18px;
+    }
+}
+
+@include mq('medium-screen') {
+    .section-content {
+        padding: 80px 15px;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}

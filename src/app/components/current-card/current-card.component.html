@@ -1,0 +1,6 @@
+<!-- Current Card -->
+<div class="current-card">
+    <h2 class="mat-h2 card-type">Your current activated {{ cardDetails['funding'] }} card</h2>
+    <img src="./../../../assets/img/cards/{{ cardDetails['brand'] | lowercase }}.png" alt="Card logo" class="card-logo">
+    <h3 class="card-digits">**** **** **** {{ cardDetails['lastDigits'] }}</h3>
+</div>

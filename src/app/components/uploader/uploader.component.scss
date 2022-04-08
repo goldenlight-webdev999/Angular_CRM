@@ -1,0 +1,177 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*               Uploader Button Style               */
+/* ------------------------------------------------- */
+
+.upload-file {
+    font-family: $font-primary;
+
+    .upload-btn {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+
+        .file-button {
+            color: $light-primary;
+            background-color: $dark-primary;
+            padding: 8px 20px;
+            border: solid transparent 2px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+    
+        .file-input {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+        &.extended {
+            display: flex;
+            justify-content: center;
+
+            .drop-area {
+                display: flex;
+                justify-content: center;
+                flex-flow: column nowrap;
+                width: 95%;
+                height: 100%;
+                padding: 30px;
+                color: $dark-primary;;
+                border: 4px dashed $gray-light;
+                border-radius: 10px;
+                
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
+
+                .cloud-icon {
+                    font-size: 5rem;
+                }
+            
+                
+                
+                .max-size-label {
+                    padding-top: 20px;
+                    font-size: 0.9rem;
+                }
+
+            }
+            &:hover .browse-button {
+                box-shadow: 0 8px 5px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !important;
+            }
+        }
+
+        &:hover .drop-area {
+            border: 4px solid $dark-primary;
+            background-color: $gray-extra-light;
+        }
+
+        &:hover .file-button {
+            color: $dark-primary;
+            background-color: $light-primary;
+            border: solid $dark-primary 2px;
+        }
+    }
+    .file-table{
+        table{
+            width: 100%;
+            text-align:left;
+            tr{
+                &.example-detail-row {
+                    height: 0;
+                }
+                  
+                &.example-element-row:not(.example-expanded-row):hover {
+                    background: #f5f5f5;
+                }
+                  
+                &.example-element-row:not(.example-expanded-row):active {
+                    background: #efefef;
+                }
+                  
+                .example-element-row td {
+                    border-bottom-width: 0;
+                }
+                  
+                .example-element-detail {
+                    overflow: hidden;
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .browse-button {
+        width: auto;
+        margin: 0 auto 15px;
+        padding: 0 16px;
+        font-size: 1.1rem;
+        text-transform: initial;
+        color: $light-primary;
+        background-color: $dark-primary;
+        border-radius: 2px;
+        cursor: pointer;
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .browse-button:disabled{
+        background-color: $gray-light;
+        cursor: not-allowed;
+    }
+}
+
+.file-metadata {
+    margin-top: 15px;
+
+    .metadata-container {
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12), 0 0 0 0 rgba(0,0,0,.12);
+
+        .panel-title {
+            color: $dark-primary;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            padding: 15px 0;
+        }
+
+        .panel-info {
+            color: $dark-primary;
+            font-size: 1rem;
+        }
+
+        .metadata-list {
+
+            .metadata-item {
+                color: $dark-primary;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                text-align: left;
+                height:36px;
+            
+                .metadata-title {
+                    text-transform: initial;
+                }
+            
+                .metadata-info {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<!-- Subscriptions page -->
+<div class="subscriptions-container">
+    <h1 class="mat-h1">Subscriptions</h1>
+    <mat-grid-list cols="1" rowHeight="calc(100% - 0px)" class="grid" *ngIf="!loading">
+        <mat-grid-tile class="subscriptions">
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="card-title">
+                        {{ cardTitle }}
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="subscriptions-content">
+                    <div>
+                        <div *ngIf="!subscriptions" class="section">
+                            <app-add-subscription></app-add-subscription>
+                        </div>
+                        <div *ngIf="subscriptions" class="section">
+                            <app-my-subscriptions></app-my-subscriptions>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <div *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+@import '../../pages/home/home-page.component.scss';
+
+/* ------------------------------------------------- */
+/*               About section styles                */
+/* ------------------------------------------------- */
+
+.plugin-section {
+    color: $light-primary;
+
+    .details {
+        border: none;
+        background-color: transparent;
+
+        .body-details {
+            display: flex;
+            flex-flow: column wrap;
+
+            .icon-details {
+                width: 100%;
+                font-size: 5em;
+            }
+
+            .title-details {
+                width: 100%;
+                margin: 20px 0;
+                color: $brand-alternative;
+                font-size: 1.4rem;
+            }
+
+            .text-details {
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 10px 10px;
+
+        .brand-logo {
+            align-self: center;
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .brand-text {
+            width: 100%;
+            text-align: center;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+
+  .action {
+    display: flex;
+    justify-content: center;
+  }
+
+    .atlassian-link {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+
+        text-decoration: none;
+
+        .atlassian-text {
+            white-space: nowrap;
+        }
+
+        .atlassian-logo {
+            margin-left: 10px;
+            height: 20px;
+
+            &.light {
+                display: none;
+            }
+
+            &.dark {
+                display: initial;
+            }
+        }
+
+        &:hover {
+
+            .atlassian-logo {
+
+                &.light {
+                    display: initial;
+                }
+
+                &.dark {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include mq('medium-screen') { 
+    .plugin-section {
+
+        .logo {
+            padding: 60px 10px 10px;
+
+            .brand-logo {
+                align-self: center;
+                width: 120px;
+                margin-bottom: 20px;
+            }
+
+            .brand-text {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}

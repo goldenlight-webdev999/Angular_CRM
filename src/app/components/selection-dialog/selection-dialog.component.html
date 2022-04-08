@@ -1,0 +1,26 @@
+<div class="slection-dialog" id="modal_id">
+  <div class="modal-content" style="width: 75%; margin: 0 auto;">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" (click)="close()">&times;</button>
+      </div>
+      <div class="modal-body item-edit-container">
+          <h4 style="color: black; text-align: center;">Choose Your Payment Method:</h4>
+          <input type="text" style="display: none;" class="plan_chosen" ng-model="plan_chseon" />
+          <input type="text" style="display: none;" class="lookup_key" />
+          <div class="row p-10">
+              <div class="col paypal-payment" [ngClass]="{active: paymentType == 'paypal'}" (click)="choosePayment('paypal')">
+                  <img src="assets/img/paypal.png" width="300px" class="margin-auto">
+              </div>
+              <div class="col card-payment" [ngClass]="{active: paymentType == 'card'}" (click)="choosePayment('card')">
+                  <img src="assets/img/card.png" width="300px" class="margin-auto">
+              </div>
+          </div>
+
+      </div>
+
+      <div class="modal-footer">
+          <button mat-button data-dismiss="modal" class="text-black" (click)="close()">Cancel</button>
+          <button mat-button class="text-black" (click)="rdrChosen()">Continue</button>
+      </div>
+  </div>
+</div>

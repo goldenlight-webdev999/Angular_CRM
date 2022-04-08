@@ -1,0 +1,165 @@
+@import '../../pages/home/home-page.component.scss';
+
+/* ------------------------------------------------- */
+/*              Features section styles              */
+/* ------------------------------------------------- */
+
+.features-section {
+    color: $dark-primary;
+    
+    .details {
+        border: none;
+        background-color: transparent;
+        margin: 20px 0;
+        padding: 0;
+        text-align: center;
+
+        .body-details {
+            display: flex;
+            flex-flow: column wrap;
+            
+            .icon-details {
+                width: 100%;
+                font-size: 5em;
+            }
+    
+            .title-details {
+                width: 100%;
+                margin-top: 70px;
+                font-size: 1.4rem;
+            }
+    
+            .text-details {
+                margin: 0;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .premium {
+
+        .body-details {
+                
+            .text-details {
+                margin: 8px;
+            }
+        }
+    }
+
+    .link {
+        color: $brand-alternative;
+        cursor: pointer;
+    }
+
+    .extra {
+        display: none;
+    }
+
+    .extensions {
+        margin-top: 35px;
+
+        .extensions-container {
+            background-color: $light-primary;
+    
+            .panel-header {
+                width: fit-content;
+                margin: 0 auto;
+                color: $light-primary;
+                background-color: $dark-primary;
+                border-radius: 10px;
+            }
+            
+            .panel-title {
+                color: $light-primary;
+                font-size: 1rem;
+                text-transform: uppercase;
+            }
+    
+            .extensions-list {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                max-height: 300px;
+                overflow-y: auto;
+                margin-top: 15px;
+    
+                .extensions-item {
+                    width: 100%;
+                    color: $dark-primary;
+                    margin: 0 10px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                    
+                    span {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+
+        /deep/ .mat-expansion-indicator:after {
+            color: $light-primary;
+        }
+    }
+}
+
+
+@include mq('medium-screen') {
+    .features-section {
+        
+        .details {
+            margin: 10px;
+            padding: 0 100px;
+    
+            .body-details {
+
+                .icon-details {
+                    font-size: 4rem;
+                }
+        
+                .title-details {
+                    width: 100%;
+                    margin-top: 50px;
+                    font-size: 1.2rem;
+                }
+        
+                .text-details {
+                    font-size: 1rem;
+                }
+            }
+        }
+    
+        .premium {
+            padding: 0 15px;
+    
+            .body-details {
+                    
+                .text-details {
+                    margin: 8px;
+                }
+            }
+        }
+
+        #additional-info {
+            width: 100%;
+            padding: 80px 0 0;
+        }
+
+        .extra {
+            display: initial;
+        }
+
+        .extensions {
+    
+            .extensions-container {
+        
+                .extensions-list {
+        
+                    .extensions-item {
+                        width: calc(100% / 5 - 20px);
+                    }
+                }
+            }
+        }
+    }
+}

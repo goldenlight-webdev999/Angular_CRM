@@ -1,0 +1,72 @@
+<!-- Footer Public -->
+<footer *ngIf="!dashboard">
+    <div class="container">
+        <div class="footer-top">
+            <div class="brand">
+                <img src="../../../assets/img/metacleaner_logo_only_light.svg" alt="Metacleaner logo" class="brand-logo">
+                <span class="brand-text">Metacleaner</span>
+            </div>
+
+            <div class="navigation">
+                <ul class="navigation-list">
+                    <li class="list-item"><a class="list-item-link" [routerLink]="['/service-agreement']">Service Agreement</a></li>
+                    <li class="list-item"><a class="list-item-link" [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+                    <li class="list-item"><a class="list-item-link" [routerLink]="['/legal-notice']">Legal notice</a></li>
+                    <li class="list-item"><a class="list-item-link" [routerLink]="['/cookies']">Cookies policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="property">
+                <span class="property-text">This product is developed by
+                    <a href="https://opendatasecurity.io/" target="_blank" rel="nofollow noopener noreferrer">ODS</a> to protect the privacy of your data
+                </span>
+                <span class="property-text">&nbsp; &copy; {{ today | date: 'yyyy' }} Open Data Security</span>
+            </div>
+
+            <div class="powered">
+                <span class="powered-text">Powered by</span>
+                <a href="https://opendatasecurity.io/" class="powered-logo" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="assets/img/ods_logo_horizontal_light.png" alt="Open Data Security logo">
+                </a>
+                <span class="powered-text">&copy; {{ today | date: 'yyyy' }} </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Private -->
+<footer *ngIf="dashboard" [class.dashboard]="dashboard">
+    <div class="container">
+        <div class="brand">
+            <img src="../../../assets/img/metacleaner_logo_only_light.svg" alt="Metacleaner logo" class="brand-logo">
+            <span class="brand-text">Metacleaner</span>
+        </div>
+
+        <div class="navigation">
+            <ul class="navigation-list">
+                <li class="list-item"><a class="list-item-link" [routerLink]="['/service-agreement']">Service Agreement</a></li>
+                <li class="list-item"><a class="list-item-link" [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+                <li class="list-item"><a class="list-item-link" [routerLink]="['/legal-notice']">Legal notice</a></li>
+                <li class="list-item"><a class="list-item-link" [routerLink]="['/cookies']">Cookies policy</a></li>
+            </ul>
+
+            <button mat-button [matMenuTriggerFor]="menu" class="legal-menu legal-button">Legal</button>
+            <mat-menu #menu="matMenu" xPosition="before" [overlapTrigger]="false" class="legal-menu legal-list">
+                <button mat-menu-item [routerLink]="['/service-agreement']">Service Agreement</button>
+                <button mat-menu-item [routerLink]="['/privacy-policy']">Privacy policy</button>
+                <button mat-menu-item [routerLink]="['/legal-notice']">Legal notice</button>
+                <button mat-menu-item [routerLink]="['/cookies']">Cookies policy</button>
+            </mat-menu>
+        </div>
+
+        <div class="powered">
+            <span class="powered-text">Powered by</span>
+            <a href="https://opendatasecurity.io/" class="powered-logo" target="_blank" rel="nofollow noopener noreferrer">
+                <img src="assets/img/ods_logo_horizontal_light.png" alt="Open Data Security logo">
+            </a>
+            <span class="powered-text">&copy; {{ today | date: 'yyyy' }} </span>
+        </div>
+    </div>
+</footer>

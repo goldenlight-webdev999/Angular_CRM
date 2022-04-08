@@ -1,0 +1,137 @@
+
+/* ------------------------------------------------- */
+/*                   Default forms                   */
+/* ------------------------------------------------- */
+
+.metacleaner-form {
+
+    imput {
+        padding: 8px 20px;
+    }
+
+    .form-control {
+        border-radius: 50px;
+        padding: 1rem;
+        height: auto;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        &:focus {
+            box-shadow: 0 0 5px $brand-alternative;
+            border: 1px solid $brand-alternative;
+        }
+    }
+
+    textarea.form-control {
+        border-radius: 35px 35px;
+        height: 16rem;
+        resize: none;
+        overflow: hidden;
+    }
+
+    .form-check-label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        &:hover {
+            input ~ .checkmark {
+                background-color: $dark-primary;
+                border: solid 2px $light-primary;
+            }
+        }
+
+        .check-text {
+            padding-left: 15px;
+        }
+        
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        input:checked ~ .checkmark {
+            background-color: $dark-primary;
+            border: none;
+
+            &:after {
+                display: block;
+            }
+        }
+
+        .checkmark {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            height: 36px;
+            width: 36px;
+            border-radius: 50px;
+            background-color: rgb(215, 215, 215);
+        
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+    
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+    
+                left: 14px;
+                top: 10px;
+                width: 8px;
+                height: 14px;
+                border: solid $light-primary;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.form-invalid {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: $red-error;
+
+    .error-icon {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+}
+
+.is-invalid {
+    box-shadow: 0 0 5px $red-error;
+    border: 1px solid $red-error;
+}
+
+
+// Custom material angular styles
+
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: $brand-alternative;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: $brand-alternative;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $dark-primary;
+}
+
+.mat-hint {
+    padding: 5px 0;
+}

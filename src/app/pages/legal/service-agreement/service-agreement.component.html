@@ -1,0 +1,989 @@
+<!-- Header -->
+<app-header
+    [shrink]="true"
+    (home)="headerNavigation('/', 'home')"
+    (features)="headerNavigation('/', 'features')"
+    (pricing)="headerNavigation('/', 'pricing')"
+    (about)="headerNavigation('/', 'about')"
+    (contact)="headerNavigation('/', 'contact')">
+</app-header>
+
+<div class="legal-section">
+    <div class="section-container">
+
+        <!-- SOFTWARE AS A SERVICE AGREEMENT (SaaS) -->
+        <div id="agreementContainer">
+
+            <h1 class="section-p1">SOFTWARE AS A SERVICE (SaaS) AGREEMENT</h1>
+
+            <p>
+                This agreement for METACLEANER® software as a service is performed between the following parties:
+            </p>
+
+            <p>
+                ON THE FIRST PART, OPEN DATA SECURITY S.L. (hereinafter, ODS), with CIF B-76.741.222, registered office at C/ Santiago, number 56, local, C.P. 38001, Santa Cruz de Tenerife, Spain and business headquarter located in C/ San Francisco, number 9, floor 4º-D, C.P. 38002, Santa Cruz de Tenerife, Spain.
+            </p>
+
+            <p>
+                ON THE SECOND PART, THE SUBSCRIBER that contracts the METACLEANER® software as a service offered through the website <a href="https://metacleaner.com">https://metacleaner.com</a> owned by ODS.
+            </p>
+
+            <span>
+                The acceptance of the Present Agreement presupposes:
+            </span>
+
+            <ul>
+                <li>
+                    That has understood and comprehended its content.
+                </li>
+                <li>
+                    In its case, that the undersigned has enough legal capacity to subscribe on behalf of THE ENTITY that represents.
+                </li>
+                <li>
+                    That assumes all the terms and conditions set forth therein.
+                </li>
+                <li>
+                    That accepts and knows our <a [routerLink]="['/privacy-policy']">Privacy Policy</a>, <a [routerLink]="['/legal-notice']">Legal Notice</a>, and <a [routerLink]="['/cookies']">Cookies Policy</a>.
+                </li>
+                <li>
+                    That they have binding force between the parties, on the one hand, <em>ODS</em> as a provider of <em>METACLEANER</em> and on the other hand <em>THE ENTITY</em>, as a subscriber for the use of<em>METACLEANER</em>.
+                </li>
+            </ul>
+
+            <p>
+                The license for the use of the METACLEANER® software as a service is addressed to customers of Companies, Associations and Public Administrations as well as clients that have the status of final consumer.
+            </p>
+
+
+            <p>
+                Such Agreement is based in the following <em>TERMS AND CONDITIONS:</em>
+            </p>
+
+            <ol class="list-subcounters">
+
+                <!-- DESCRIPTION OF THE SERVICE -->
+                <li>
+                    <p class="section-p2">
+                        DESCRIPTION OF THE SERVICE.
+                    </p>
+
+                    <p>
+                        The provided service by ODS to the SUBSCRIBER and to which this agreement is linked is the use of the METACLEANER® software as a servicee consisting of an online metadata cleanup tool.
+                    </p>
+
+                    <span>
+                        The main characteristics of the service are as follows:
+                    </span>
+
+                    <ul>
+                        <li>Compatibility with multiple types of files (Multimedia, PDF, office, etc).</li>
+                        <li>Simple and intuitive interface.</li>
+                        <li>Speed of metadata cleanup.</li>
+                        <li>100% online.</li>
+                        <li>Encrypted communications to guarantee confidentiality.</li>
+                    </ul>
+                </li>
+
+
+                <!-- GRANT OF LICENSE OF ACCESS AND USE OF THE SERVICE -->
+                <li>
+                    <p class="section-p2">
+                        GRANT OF LICENSE OF ACCESS AND USE OF THE SERVICE.
+                    </p>
+
+                    <p>
+                        Through this, ODS grants THE SUBSCRIBER, including all its authorized Users, a license to use the METACLEANER® software as a service.
+                    </p>
+
+                    <p>
+                        The subscription of any of the modalities for use of METACLEANER® software as a service, will not entitle THE SUBSCRIBER nor its authorized Users to market, license, sublicense, lease, rent, sell, resell, transfer, assign, distribute, make available of third parties or in any other way or benefit of the service that has not been authorized in this Agreement.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER will not be able or will allow its users with Access, as well as third parties, to carry out any modification of the METACLEANER® software, to try to discover the source code, to use reverse engineering or any other type of penetration test, code audit or security measure.
+                    </p>
+
+                    <p>
+                        The SUBSCRIBER must ensure that all users who authorize Access to use the METACLEANER® software as a service must comply with these terms and conditions.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER is the responsible for the use of the METACLEANER® software as a service in accordance with these conditions and will respond directly to ODS for any damage or harm that may be caused or may be cause as a result of the improper use of the service by the staff under their charge. It is understood as “misuse” any use of the service that is contrary to these conditions of use of the service, good faith and current regulations.
+                    </p>
+
+                    <p>
+                        ODS must be notified in a reliable manner of any irregularity that has been committed, as well as, in the case of access by a third party not authorized to proceed to take the necessary security measures. In case of breach of this obligation by THE SUBSCRIBER, ODS may terminate the service unilaterally, as well as pass on to THE SUBSCRIBER any damage or injury that may have been caused or may have caused.
+                    </p>
+                </li>
+
+                <!-- PLANS FOR THE USE OF METACLEANER® -->
+                <li>
+                    <p class="section-p2">
+                        PLANS FOR THE USE OF METACLEANER®.
+                    </p>
+
+                    <p>
+                        All personal data collected in the registration forms for the use of METACLEANER® will be used in accordance with our <a [routerLink]="['/privacy-policy']">Privacy Policy</a>
+                    </p>
+
+                    <p>
+                        The right to use METACLEANER® license does not imply ownership or any other right. <u>All copyrights and property rights are exclusive to ODS.</u>
+                    </p>
+
+                    <p class="section-p3">
+                        3.1. Free plans for the use of METACLEANER®.
+                    </p>
+
+                    <p>
+                        The scope of authorized use of the free plans is as follows:
+                    </p>
+
+                    <span>UNREGISTERED USERS</span>
+                    <ul>
+                        <li>File size limit of 5 MB.</li>
+                        <li>Traffic limit of 5 files/day.</li>
+                        <li>Access only via web.</li>
+                    </ul>
+
+                    <span>REGISTERED USERS</span>
+                    <ul>
+                        <li>File size limit of 5 MB.</li>
+                        <li>Traffic limit of 20 files/day.</li>
+                        <li>Access only via web.</li>
+                    </ul>
+
+                    <p class="section-p3">
+                        3.2. Payment plans for the use of METACLEANER®.
+                    </p>
+
+                    <p>
+                        The scope of the authorized plans of payments for the use of METACLEANER is as follows:
+                    </p>
+
+                    <span>BASIC PLAN</span>
+                    <ul>
+                        <li>File size limit of 30 MB.</li>
+                        <li>Traffic limit of 1 GB/month.</li>
+                        <li>Access only via web.</li>
+                    </ul>
+
+                    <span>ADVANCED PLAN</span>
+                    <ul>
+                        <li>File size limit of 50 MB.</li>
+                        <li>Traffic limit of 10 GB/month.</li>
+                        <li>Access via web / 3 API apps</li>
+                    </ul>
+
+                    <span>ENTERPRISE PLAN</span>
+                    <ul>
+                        <li>File size limit of 50 MB.</li>
+                        <li>Traffic limit of 100 GB/month.</li>
+                        <li>Access via web / Unlimited API apps</li>
+                    </ul>
+
+                    <p class="section-p4">
+                        3.2.1. Rate.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER will pay ODS a monthly subscription fee according to the following scheme:
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Type of Plan</th>
+                                <th>Rate per month</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Basic Plan</td>
+                                <td>5 €/month</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Plan</td>
+                                <td>30 €/month</td>
+                            </tr>
+                            <tr>
+                                <td>Enterprise Plan</td>
+                                <td>50 €/month</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="section-p4">
+                        3.2.2. Payment.
+                    </p>
+
+                    <p>
+                        The quote of subscription will be paid through credit card or direct debit. 
+                    </p>
+
+                    <p class="section-p4">
+                        3.2.3. Expiration.
+                    </p>
+
+                    <p>
+                        Expired month expiration.
+                    </p>
+
+                    <p class="section-p4">
+                        3.2.4. Taxes.
+                    </p>
+
+                    <p>
+                        The amounts of payment subscribed under this agreement indicated in section 3.2.1 include taxes. Therefore, the indicated price is the final price.
+                    </p>
+
+                    <p class="section-p4">
+                        3.2.5. Suspension of service.
+                    </p>
+
+                    <span>
+                        ODS reserves the right to suspend the service to THE SUBSCRIBER for use of METACLEANER® in any of its contracted modalities in case of:
+                    </span>
+
+                    <ul>
+                        <li>
+                            Breach of the terms and conditions of this agreement.
+                        </li>
+                        <li>
+                            When considers necessary to suspend the service for security reasons that may affect THE SUBSCRIBER of the service.
+                        </li>
+                        <li>
+                            Scheduled maintenance work.
+                        </li>
+                        <li>
+                            Causes of force majeure.
+                        </li>
+                        <li>
+                            Problems associated with computing devices, local area networks or connections of Internet service providers.
+                        </li>
+                        <li>
+                            The inability of ODS to provide the service due to the acts and omissions of THE SUBSCRIBER or users with access.
+                        </li>
+                    </ul>
+
+                    <p>
+                        We will contact you before the service is interrupted unless this is not possible (force majeure).
+                    </p>
+                </li>
+
+                <!-- TECHNICAL SUPPORT -->
+                <li>
+                    <p class="section-p2">
+                        TECHNICAL SUPPORT.
+                    </p>
+
+                    <span>
+                        Subscribers of payment plans, during the term of the subscription, will have the following Support services:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            Telephone or electronic assistance during normal business hours to help THE SUBSCRIBER locate and solve problems with the Service and any related software.
+                        </li>
+                        <li>
+                            The Support system will be available as described in the following section.
+                        </li>
+                    </ol>
+
+                    <p>
+                        The subscribers of free plans will have access to the support through the online form.
+                    </p>
+                </li>
+
+
+
+                <!-- LEVEL OF SERVICE -->
+                <li>
+                    <p class="section-p2">
+                        LEVEL OF SERVICE.
+                    </p>
+
+                    <p>
+                        <u>The service levels described in this section are only applicable to subscribers of payment plans.</u>
+                    </p>
+
+                    <p class="section-p3">
+                        5.1. Applicable levels.
+                    </p>
+
+                    <p class="section-p4">
+                        5.1.1. Availability.
+                    </p>
+
+                    <span>
+                        The components of the service assigned to each of the tasks will have the following availability associated:
+                    </span>
+
+                    <ul>
+                        <li>
+                            99.9% service availability.
+                        </li>
+                        <li>
+                            20.000 requests per second.
+                        </li>
+                        <li>
+                            45 Gb/s of guaranteed bandwidth.
+                        </li>
+                    </ul>
+
+                    <p>
+                        The provided services will be offered with the aforementioned availability except for the fringes established for maintenance windows.
+                    </p>
+
+                    <p class="section-p4">
+                        5.1.2. Continuity.
+                    </p>
+
+                    <p>
+                        ODS undertakes to restore the service to the levels of service offered, before the materialization of a serious contingency within a period not exceeding 8 hours from the time of the incident.
+                    </p>
+
+                    <p class="section-p4">
+                        5.1.3. Capacity.
+                    </p>
+
+                    <p>
+                        ODS is committed to managing the capacity of the services provided to the SUBSCRIBER according to their needs. In any case, the increase in resources for the provision of the service will always be subject to the express authorization of the SUBSCRIBER.
+                    </p>
+
+                    <p>
+                        In order to guarantee adequate levels of service, the SUBSCRIBER must inform ODS of possible peaks related to the use of resources derived from its business activity. This notification must be made at least 48 hours in advance.
+                    </p>
+
+                    <p class="section-p4">
+                        5.1.4. Incident management and service requests.
+                    </p>
+
+                    <p>
+                        The provision of the service may be subject to incidents that may compromise the maintenance of adequate levels of service. In this sense and to try that these incidents impact as little as possible in the provision of the service, criteria of prioritization of incidents are established that allow to offer correct response and resolution times. These prioritization criteria are included in 3 types: Requests, Normals and Critical Incidents:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Requests: Support request of a normal nature not related to the continuity of the service.
+                        </li>
+                        <li>
+                            Normals: Incidents that do not imply the total stoppage of the service or that do not compromise the security of the service in any of its parameters but that may affect a specific user or domain / subdomain.
+                        </li>
+                        <li>
+                            Criticals: Incidents that involves the total detention of the service of that may compromise the safety of the service.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Regarding the response and resolution timing, the following service levels have been established:
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Response time</th>
+                                <th>Resolution time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Requests</td>
+                                <td>24 hours</td>
+                                <td>1 week</td>
+                            </tr>
+                            <tr>
+                                <td>Normal Incident </td>
+                                <td>16 hours</td>
+                                <td>48 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Critical Incident</td>
+                                <td>8 hours</td>
+                                <td>24 hours</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        The Customer Service Center (CAU) will be available at the following Support hours: From Monday to Friday (non-holidays) from 8:00 a.m. to 18:00 p.m.  (GMT+1 Hour – London).
+                    </p>
+
+                    <p class="section-p3">
+                        5.2. Maintenance of the system.
+                    </p>
+
+                    <span>
+                        ODS can:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            Disconnect the Service for scheduled maintenance that provides to THE SUBSCRIBER with written programming (although this scheduled maintenance time will not count as System Availability).
+                        </li>
+                        <li>
+                            All system updates will be notified in advance to the email address provided by THE SUBSCRIBER.
+                        </li>
+                    </ol>
+
+                    <p class="section-p3">
+                        5.3. Monitoring of the service.
+                    </p>
+
+                    <p>
+                        All the tasks described in SECTION 1 (SERVICE DESCRIPTION) of this agreement will have monitoring that allows real-time monitoring of the degree of compliance with service levels. THE SUBSCRIBER may Access through his control panel all the information of the use of the last month´s service.
+                    </p>
+
+                    <p class="section-p3">
+                        5.4. Definition of system availability.
+                    </p>
+
+                    <ol type="a">
+                        <li>
+                            Percentage of minutes per month. "System availability" means the percentage of minutes in a month when the key components of the Service is operational.
+                        </li>
+                        <li>
+                            Not included in "System Availability". "System availability" will not include any minute of downtime resulting from any of the following circumstances:
+                        </li>
+
+                        <ol>
+                            <li>Scheduled maintenance. </li>
+                            <li>Events due to force majeure.</li>
+                            <li>Malicious attacks on the system.</li>
+                            <li>Problems associated with THE SUBSCRIBER, computing devices, local area networks or connections of internet service suppliers, or</li>
+                            <li>Inability to provide services due to the acts or omissions of THE SUBSCRIBER.</li>
+                        </ol>
+                    </ol>
+
+                </li>
+
+
+                <!-- CLAUSE OF CONFIDENTIALITY -->
+                <li>
+                    <p class="section-p2">
+                        CLAUSE OF CONFIDENTIALITY (art. 5 GDPR).
+                    </p>
+
+                    <p>
+                        Complying with the principle of integrity and confidentiality contained in the current regulations on data protection, ODS undertakes to maintain the duty of secrecy and confidentiality with respect to personal data to which it may have access.
+                    </p>
+
+                </li>
+
+
+                <!-- STATISTICAL INFORMATION -->
+                <li>
+                    <p class="section-p2">
+                        STATISTICAL INFORMATION.
+                    </p>
+
+                    <p>
+                        ODS may anonymously collect statistical information related to the performance of the Service in order to improve its performance, only if such information des not identify the data as THE SUBSCRIBER or otherwise includes the name of THE SUBSCRIBER.
+                    </p>
+
+                </li>
+
+
+                <!-- INTELLECTUAL AND INDUSTRIAL PROPERTY -->
+                <li>
+                    <p class="section-p2">
+                        INTELLECTUAL AND INDUSTRIAL PROPERTY.
+                    </p>
+
+                    <p class="section-p3">
+                        8.1. Property.
+                    </p>
+
+                    <p>
+                        The programs (METACLEANER® software) covered by this agreement, the original reproductions thereof, any partial or total copy, the legal rights of copy, patent, trademarks, trade secrets, and any other intellectual or property rights industrial, belong only to ODS.
+                    </p>
+
+                    <p>
+                        ODS will maintain the property including all documentation, modifications, improvements, updates, derivative words and all other intellectual property rights related to the Service, including the name of ODS and the logos and trademarks reproduced through the Service.
+                    </p>
+
+                    <p class="section-p3">
+                        8.2. Lack of cession of property rights.
+                    </p>
+
+                    <p>
+                        In no case, contracting the service supposes a total or partial cession of the aforementioned rights to THE SUBSCRIBER nor to its users who may have Access for its account.
+                    </p>
+
+                </li>
+
+
+                <!-- SUBSCRIBER OBLIGATIONS -->
+                <li>
+                    <p class="section-p2">
+                        SUBSCRIBER OBLIGATIONS.
+                    </p>
+
+                    <p class="section-p3">
+                        9.1. Hardware obligations.
+                    </p>
+
+                    <span>
+                       THE SUBSCRIBER will be responsible for:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            Obtain and maintain all computer hardware, software and communication equipment necessary to access the Service internally, and
+                        </li>
+                        <li>
+                            Pay all third-party Access charges incurred during the use of the Service.
+                        </li>
+                    </ol>
+
+                    <p class="section-p3">
+                        9.2. Utilization of services.
+                    </p>
+
+                    <span>
+                        THE SUBSCRIBER shall:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            Comply with all national and international laws and regulations applicable to the use of the Service,
+                        </li>
+                        <li>
+                            Use the Service solely for the purposes set forth in this Agreement, and,
+                        </li>
+                    </ol>
+
+                </li>
+
+
+                <!-- RESTRICTED USES -->
+                <li>
+                    <p class="section-p2">
+                        RESTRICTED USES.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER cannot perform the following behaviors:
+                    </p>
+
+                    <ol type="a">
+                        <li>
+                            Upload or distribute any file that contains viruses, damaged files or any other software or similar program that may damage the operation of the Service.
+                        </li>
+                        <li>
+                            Modify, disassemble, decompile or reverse engineer the Service.
+                        </li>
+                        <li>
+                            Sounding, scanning, testing the vulnerability or circumventing any mechanism of security used by the sites, servers or networks connected to the Service.
+                        </li>
+                        <li>
+                            Carry out any action that imposes an excessive or disproportionate burden of the sites, servers or networks connected to the Service.
+                        </li>
+                        <li>
+                            Copy or reproduce the Service.
+                        </li>
+                        <li>
+                            Access or use the data of other customers their users through the Service.
+                        </li>
+                        <li>
+                            Maliciously reduce or diminish the accessibility of the Service.
+                        </li>
+                        <li>
+                            Use the service to publish, promote or transmit any illegal, harassing, defamatory, abusive, threatening, harmful, objectionable or objectionable material, or
+                        </li>
+                        <li>
+                            Transmit or send any material that could incite others to carry out conduct constituting moral damage or cause civil liability.
+                        </li>
+                    </ol>
+
+                </li>
+
+
+                <!-- OBLIGATIONS OF CONFIDENTIALITY -->
+                <li>
+                    <p class="section-p2">
+                        OBLIGATIONS OF CONFIDENTIALITY.
+                    </p>
+
+                    <p>
+                        Both ODS and THE SUBSCRIBER undertakes not to disclose the confidential information regarding the other party they have knowledge of due to the execution of the Agreement and to keep it secret, even after the end of it.
+                    </p>
+
+                    <p>
+                        Both parties agree to take the necessary measures with respect to their personnel and even third parties that may have Access to such information, in order to guarantee the confidentiality object of this clause.
+                    </p>
+
+                </li>
+
+
+                <!-- BEGINNING OF EFFECTIVENESS OF THIS AGREEMENT -->
+                <li>
+                    <p class="section-p2">
+                        BEGINNING OF EFFECTIVENESS OF THIS AGREEMENT.
+                    </p>
+
+                    <p>
+                        The beginning of the effectiveness of this Agreement will take place at the moment of the formalization of the subscription of the METACLEANER® software as a service.
+                    </p>
+
+                </li>
+
+
+                <!-- TERMINATION -->
+                <li>
+                    <p class="section-p2">
+                        TERMINATION.
+                    </p>
+
+                    <p class="section-p3">
+                        13.1. Conditions for the termination of this Agreement.
+                    </p>
+
+                    <p>
+                        In case of request for cancellation of the service before the end of the contracted period, THE SUBSCRIBER may cancel his account and terminate this agreement by performing the necessary action in the control panel of his account.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER may continue to use METACLEANER® for the period contracted.   ODS will not refund the money to THE SUBSCRIBER for any subscription fee paid prior to the effective cancellation date.
+                    </p>
+
+                    <p>
+                        In the event that ODS wishes to withdraw this agreement for any reason, will allow THE SUBSCRIBER a minimum of 30-day notice.
+                    </p>
+
+                    <p class="section-p3">
+                        13.2. Termination for non-payment.
+                    </p>
+
+                    <p>
+                        In case of non-payment by the SUBSCRIBER, the subscription will be canceled, and the service will be discontinued immediately and without prior notice. Likewise, ODS reserves the right to collect the possible amounts pending payment through an external collection management company.
+                    </p>
+
+                    <p class="section-p3">
+                        13.3. Data recovery.
+                    </p>
+
+                    <p>
+                        ODS does not store the cleaned files or metadata. In case THE SUBSCRIBER wishes to recover the usage data (quantity and format of the files that have been cleaned through METACLEANER®) he will have 30 days from the date of the end of his subscription.
+                    </p>
+
+                </li>
+
+
+                <!-- COMPENSATION -->
+                <li>
+                    <p class="section-p2">
+                        COMPENSATION.
+                    </p>
+
+                    <p class="section-p3">
+                        14.1. Compensation for lack of service.
+                    </p>
+
+                    <p>
+                        ODS (as indemnifying party) will indemnify THE SUBSCRIBER (as indemnified party) by a 200% for the days of service that the system is not operational.
+                    </p>
+
+                    <p class="section-p3">
+                        14.2. Requirements for compensation.
+                    </p>
+
+                    <span>
+                        ODS will indemnify THE SUBSCRIBER only if the following circumstances occur:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            The use of the Services by THE SUBSCRIBER complies with this agreement,
+                        </li>
+                        <li>
+                            The inoperability of the service was not caused by THE SUBSCRIBER modifying or altering it,
+                        </li>
+                        <li>
+                            The inoperability was not caused by THE SUBSCRIBER combining the Services with products not provided by ODS,
+                        </li>
+                        <li>
+                            The inoperability of the service has not been a cause of force majeure.
+                        </li>
+                        <li>
+                            The inoperability was not due to causes beyond ODS.
+                        </li>
+                    </ol>
+
+                </li>
+
+
+                <!-- RESPONSIBILITY -->
+                <li>
+                    <p class="section-p2">
+                        RESPONSIBILITY.
+                    </p>
+
+                    <p>
+                        ODS will not be responsible for the misuse that can be made of the use of METACLEANER® during any of the contracted modalities. Therefore, THE SUBSCRIBER and all its registered users that include it, depending on the contracted use of the METACLEANER® software as a service, will be responsible for any misuse that is outside the scope of the permitted use or outside the object of activity of use of METACLEANER® and that may harm ODS or third parties.
+                    </p>
+
+                    <p>
+                        THE SUBSCRIBER of any of the modalities of use of the METACLEANER® software as a service, will be responsible for any infringement and filtering on the rights and content of Intellectual and Industrial Property.
+                    </p>
+
+                    <p>
+                        ODS is not responsible for any partial or total damages, direct or indirect that may suffer the SUBSCRIBE, the USERS with Access or THIRD PARTIES during or after the use of the METACLEANER® software as a service.
+                    </p>
+
+                    <p>
+                        In case of failure or system crash that would cause the SUBSCRIBER and/or USERS with Access to have no Access to the METACLEANER® license, ODS will not be liable for any damages that the SUBSCRIBER and/or USERS might suffer for not being able to access your computer systems and equipment. However, ODS will be obligated to provide Support as stipulated in this Agreement.
+                    </p>
+
+                </li>
+
+
+                <!-- GENERAL PROVISIONS -->
+                <li>
+                    <p class="section-p2">
+                        GENERAL PROVISIONS.
+                    </p>
+
+                    <p class="section-p3">
+                        16.1. Efficacy of the present.
+                    </p>
+
+                    <span>
+                        This Agreement fulfills the following conditions:
+                    </span>
+
+                    <ol type="a">
+                        <li>
+                            Represents the final expression of the intention of the parties in relation to the object of this agreement,
+                        </li>
+                        <li>
+                            Contains all the terms that the parties agreed in relation to the object, and
+                        </li>
+                    </ol>
+
+                    <p class="section-p3">
+                        16.2. Modifications.
+                    </p>
+
+                    <p>
+                        ODS may modify this Agreement for the use of software as a METACLEANER® service. Any modifications of this Agreement will be previously notified to the SUBSCRIBER with 30 days notice. If the prior notification cannot be made, the modifications will take effect 30 days after its publication for the existing SUBSCRIBER.
+                    </p>
+
+                    <p class="section-p3">
+                        16.3. Assignment.
+                    </p>
+
+                    <p>
+                        Neither party may assign this agreement or any of its rights or obligations without the written consent of the other party.
+                    </p>
+
+                    <p class="section-p3">
+                        16.4. Method of notification.
+                    </p>
+
+                    <p>
+                        The parties will communicate with each other by means of email addresses and telephone numbers that have been provided to each other.
+                    </p>
+
+                    <p class="section-p3">
+                        16.5. Applicable law and territorial jurisdiction.
+                    </p>
+
+                    <p>
+                        This Agreement will be governed, interpreted and applied in accordance with Spanish laws. Territorial jurisdiction over any discrepancy that may arise in the interpretation and/or application of this Agreement, will correspond to the Judicial authorities of Santa Cruz de Tenerife (Spain).
+                    </p>
+
+                    <p class="section-p3">
+                        16.6. Force majeure.
+                    </p>
+
+                    <p>
+                        Neither party will be liable for any performance delays or non-compliance due to causes beyond its reasonable control, except for payment obligations.
+                    </p>
+
+                </li>
+
+
+                <!-- DEFINITIONS -->
+                <li>
+                    <p class="section-p2">
+                        DEFINITIONS.
+                    </p>
+
+                    <p class="section-p3">
+                        17.1. Subscriber.
+                    </p>
+
+                    <p>
+                        User who registers to use the METACLEANER® software as a service and who accepts the present terms and conditions of use of the service that constitutes the contract between the parties.
+                    </p>
+
+                    <p class="section-p3">
+                        17.2. Users.
+                    </p>
+
+                    <p>
+                        Number of uses with Access chosen by the SUBSCRIBER in their organization, to use the METACLEANER® software as a service.
+                    </p>
+
+                    <p class="section-p3">
+                        17.3. The Entity.
+                    </p>
+
+                    <p>
+                        Organization, corporation, company, society, governmental authority, company, association to which the SUBSCRIBER represents.
+                    </p>
+
+                    <p class="section-p3">
+                        17.4. Privacy Policy.
+                    </p>
+
+                    <p>
+                        Policy on data protection that ODS performs on personal data that may be collected through this website and/or the dashboard of the application. You can Access it in the links available for it.
+                    </p>
+
+                    <p class="section-p3">
+                        17.5. Legal Notice.
+                    </p>
+
+                    <p>
+                        Information about this website based on the Law of Services of the Information Society and Electronic Commerce (LSSICE).
+                    </p>
+
+                    <p class="section-p3">
+                        17.6. Cookies Policy.
+                    </p>
+
+                    <p>
+                        Information about the cookies used by this website.
+                    </p>
+
+                    <p class="section-p3">
+                        17.7. Intellectual and Industrial Property.
+                    </p>
+
+                    <span>
+                        In general terms, rights that correspond to its creators on their Works and inventions, including computer programs and:
+                    </span>
+
+                    <ul>
+                        <li>
+                            Service brands and designs, including all requests and registrations.
+                        </li>
+                        <li>
+                            Copyright in general.
+                        </li>
+                        <li>
+                            Business secrets and confidential information.
+                        </li>
+                        <li>
+                            Patents, applications and registrations.
+                        </li>
+                        <li>
+                            Websites and domain name registrations.
+                        </li>
+                        <li>
+                            Trademarks, interests, formats, graphic designs and images, documents and texts including applications and records.
+                        </li>
+                    </ul>
+
+                    <p class="section-p3">
+                        17.8. Commercial Secrets and Confidential Information.
+                    </p>
+
+                    <p>
+                        All confidential information that the parties cannot disclose to third parties without express authorization.
+                    </p>
+
+                    <p class="section-p3">
+                        17.9. Level of Service.
+                    </p>
+
+                    <p>
+                        Description of availability of the METACLEANER® service.
+                    </p>
+
+                    <p class="section-p3">
+                        17.10. Free plans for use by METACLEANER®.
+                    </p>
+
+                    <p>
+                        Licenses to use the METACLEANER® service that are not subject to payment.
+                    </p>
+
+                    <p class="section-p3">
+                        17.11. Payment plans for use by METACLEANER®.
+                    </p>
+
+                    <p>
+                        Licenses to use the METACLEANER® service subject to payment conditions.
+                    </p>
+
+                    <p class="section-p3">
+                        17.12. TB (terabyte).
+                    </p>
+
+                    <p>
+                        It is a unit of computer capacity measurement, whose symbol is TB, and is equivalent to 1.000 GBs (gigabyte).
+                    </p>
+
+                    <p class="section-p3">
+                        17.13. Control Panel of the Account.
+                    </p>
+
+                    <p>
+                        Control panel of the SUBSCRIBER that allows you to manage the mode of use of the METACLEANER® software as a service, payment modalities and cancellation of the service.
+                    </p>
+
+                    <p class="section-p3">
+                        17.14. Business day.
+                    </p>
+
+                    <p>
+                        Excluding Saturdays, Sundays and nationwide holidays (Spain).
+                    </p>
+
+                    <p class="section-p3">
+                        17.15. Data.
+                    </p>
+
+                    <p>
+                        Means all the data that THE SUBSCRIBER creates with or uses with the Service, or that are related to the use of the Services.
+                    </p>
+
+                    <p class="section-p3">
+                        17.16. Applicable law.
+                    </p>
+
+                    <p>
+                        Means applicable regulations in the interpretation of this Agreement.
+                    </p>
+
+                    <p class="section-p3">
+                        17.17. Availability of the system.
+                    </p>
+
+                    <p>
+                        It is defined in section 5.4 of this Agreement.
+                    </p>
+
+                </li>
+
+            </ol>
+
+            <div class="last-modified">
+                <span class="small-text">Last modified: {{ modified_date | date:'fullDate' }}</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<app-footer></app-footer>

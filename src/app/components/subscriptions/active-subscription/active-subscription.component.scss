@@ -1,0 +1,160 @@
+@import "base/module";
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*       Active subscription component styles        */
+/* ------------------------------------------------- */
+
+.current-plan {
+
+    .plan {
+        margin-bottom: 20px;
+    }
+    
+    .plan-info {
+
+        .list-group-item {
+            padding: .75rem .25rem;
+            background-color: transparent;
+
+            .item-title {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin: 0 0 5px;
+                
+                .next-charge {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0 4px;
+                    padding: 4px 8px;
+                    border-radius: 8px;
+                    font-style: oblique;
+                    font-size: 0.9rem;
+                    color: $light-primary;
+                    background-color: $brand-alternative;
+    
+                    .icon {
+                        font-size: 1.2rem;
+                        line-height: 0;
+                    }
+                }
+            }
+
+            .item-content {
+                display: flex;
+                justify-content: flex-start;
+
+
+                .chart {
+                    width: 50%;
+                    padding-top: 20px;
+
+                    .bandwidth-chart {
+                        margin: 0 auto;
+                    }
+
+                    .bandwidth-text {
+                        position: relative;
+                        top: -60px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+
+                .info-chart {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-around;
+
+                    width: 50%;
+                    padding-left: 8px;
+
+                    .title {
+                        font-style: oblique;
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                        margin: 0;
+                    }
+                    
+                    .content {
+                        font-weight: bold;
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mq('extra-large-screen') {
+    .current-plan {
+        display: flex;
+        justify-content: center;
+
+        .plan {
+            width: 50%;
+            margin-bottom: 0;
+        }
+        
+        .plan-info {
+            width: 50%;
+            margin-left: 15px;
+    
+            .list-group-item {
+                background-color: transparent;
+    
+                .item-title {
+                    width: 100%;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    margin: 0 0 5px;
+                }
+    
+                .item-content {
+                    display: flex;
+                    justify-content: flex-start;
+    
+                    .chart {
+                        width: 50%;
+                        padding-top: 20px;
+    
+                        .bandwidth-chart {
+                            margin: 0 auto;
+                        }
+    
+                        .bandwidth-text {
+                            position: relative;
+                            top: -60px;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                    .info-chart {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-around;
+    
+                        width: 50%;
+                        padding-left: 8px;
+    
+                        .title {
+                            font-style: oblique;
+                            font-size: 0.8rem;
+                            text-transform: uppercase;
+                            margin: 0;
+                        }
+                        
+                        .content {
+                            font-weight: bold;
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

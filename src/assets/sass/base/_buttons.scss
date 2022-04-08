@@ -1,0 +1,86 @@
+@import "helpers/module";
+
+/* ------------------------------------------------- */
+/*                  Default buttons                  */
+/* ------------------------------------------------- */
+
+.mat-button {
+    padding: 5px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+
+    &.button-dark {
+        color: $light-primary;
+        background-color: $dark-primary;
+
+        &:hover {
+            color: $light-primary;
+            background-color: $brand-alternative;
+        }
+    }
+    
+    &.button-light {
+        color: $dark-primary;
+        background-color: $light-primary;
+
+        &:hover {
+            color: $light-primary;
+            background-color: $brand-alternative;
+        }
+    }
+
+    &.button-danger {
+        color: $light-primary;
+        background-color: $dark-primary;
+
+        &:hover {
+            color: $light-primary;
+            background-color: $red-error;
+        }
+    }
+
+    .button-text {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      white-space: nowrap;
+
+        .mat-icon {
+            margin-right: 5px;
+            align-self: center;
+        }
+    }
+
+    &.small-button {
+        border-radius: 8px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+    
+    &.full-width {
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    .mat-button-focus-overlay {
+        -webkit-transition: all 0.2s ease-in-out !important;
+        -moz-transition: all 0.2s ease-in-out !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+}
+
+.mat-icon-button:focus {
+    outline: none;
+}
+
+.disable-overlay .mat-button-focus-overlay {
+    background-color: transparent !important;
+}

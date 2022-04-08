@@ -1,0 +1,27 @@
+<!-- Stripe form -->
+<form id="payment-form" class="metacleaner-form" [formGroup]="stripeForm" autocomplete="off" novalidate>
+
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Full name*" formControlName="name" [ngClass]="{ 'is-invalid': submitted && form.name.errors }" required maxlength="32" />
+        <div *ngIf="submitted && form.name.errors" class="form-invalid">
+            <div *ngIf="form.name.errors.required"><i class="material-icons error-icon">error_outline</i> Name is required</div>
+            <div *ngIf="form.name.errors.maxlength"><i class="material-icons error-icon">error_outline</i> The name entered exceeds the maximum length</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="field">
+            <div id="card-element" class="form-control"></div>
+            <div id="card-errors" role="alert"></div>
+        </div>
+    </div>
+
+    <div class="action">
+        <button *ngIf="!loading" mat-button class="button-dark disable-overlay" (click)="onSubmit()"><span>{{ actionForm }}</span></button>
+        <button *ngIf="!loading" mat-button class="button-dark disable-overlay" (click)="goBack()"><span>Go back</span></button>
+        <div *ngIf="loading">
+            <app-loading [button]="true"></app-loading>
+        </div>
+    </div>
+
+</form>

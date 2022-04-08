@@ -1,0 +1,39 @@
+.margin-auto{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card_img{
+  padding-top: 58px;
+}
+
+.text-black{
+  color: black;
+}
+.p-10{
+  padding: 10px;
+}
+
+.green-border{
+  border: green solid 1px;
+}
+
+.active{
+  border: green solid 2px;
+}
+
+.slection-dialog {
+  position: fixed;
+  top: calc(50% - 300px) !important;
+  
+  .modal-body {
+    .col {
+      display: flex;
+      align-items: center;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

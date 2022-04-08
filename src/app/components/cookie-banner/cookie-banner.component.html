@@ -1,0 +1,17 @@
+<!-- Cookie Banner -->
+<div class="banner" *ngIf="!cookieconsent">
+    <div class="banner-information">
+        <p>
+            We use cookies to offer you a better experience, improve our services, and analyze the traffic on our page.
+        </p>
+        <p>
+            By continuing to use this website, you consent to the use of cookies in accordance with our <a [routerLink]="['/cookies']">Cookies policy</a>.
+        </p>
+    </div>
+
+    <div class="banner-action">
+        <button mat-button class="button-light disable-overlay" (click)="saveCookie()">
+            <span>Got it</span>
+        </button>
+    </div>
+</div>
